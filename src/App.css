@@ -4,6 +4,7 @@
   min-height: 100vh;
   padding: 8px;
   box-sizing: border-box;
+  background-color: #edeff2;
   transition: gap 0.34s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -20,7 +21,7 @@
 .sidebar {
   width: 262px;
   flex: 0 0 262px;
-  background: var(--panel-soft);
+  background: #edeff2;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 10px;

@@ -17,7 +17,7 @@ import {
 import { FaGamepad, FaGithub } from 'react-icons/fa6'
 import { BiGitBranch } from 'react-icons/bi'
 
-import { SidebarTop } from './Sidebar'
+import { SidebarTop } from '../layout/Sidebar'
 
 const iconMap = {
   reading: HiOutlineBookOpen,

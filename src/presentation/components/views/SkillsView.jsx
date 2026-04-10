@@ -4,8 +4,8 @@ import { FaGithub } from 'react-icons/fa6'
 import { RiRobot2Line } from 'react-icons/ri'
 import { SiOpenai, SiRedis, SiVercel } from 'react-icons/si'
 
-import { skillCategories, skills } from '../data'
-import { SidebarTop } from './Sidebar'
+import { useSkills } from './useSkills'
+import { SidebarTop } from '../layout/Sidebar'
 
 function ProviderMark({ type }) {
   if (type === 'github') {
@@ -28,6 +28,7 @@ function ProviderMark({ type }) {
 }
 
 export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }) {
+  const { skills, categories } = useSkills()
   const [activeCategory, setActiveCategory] = useState('All')
   const [search, setSearch] = useState('')
 
@@ -88,7 +89,7 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
         </div>
 
         <div className="pill-row">
-          {skillCategories.map((category) => (
+          {categories.map((category) => (
             <button
               key={category}
               className={`pill ${category === activeCategory ? 'is-active' : ''}`}

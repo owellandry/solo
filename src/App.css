@@ -1013,6 +1013,8 @@
 
 .text-center {
   text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .login-submit {

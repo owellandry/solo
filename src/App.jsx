@@ -32,7 +32,8 @@ function App() {
         <main className="workspace">
           <div
             key={`${state.activeView}-${state.workspaceMode}-${state.selectedProject?.id}`}
-            className="view-stage"
+            className={`view-stage${state.workspaceSlideDir ? ` view-stage--${state.workspaceSlideDir}` : ''}`}
+            onAnimationEnd={() => actions.setWorkspaceSlideDir(null)}
           >
             {state.activeView === 'home' && (
               <HomeView

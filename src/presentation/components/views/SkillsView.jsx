@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { HiOutlineMagnifyingGlass, HiOutlinePlus } from 'react-icons/hi2'
 import { FaGithub } from 'react-icons/fa6'
 import { RiRobot2Line } from 'react-icons/ri'
@@ -32,20 +32,18 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
   const [activeCategory, setActiveCategory] = useState('All')
   const [search, setSearch] = useState('')
 
-  const filteredSkills = useMemo(() => {
-    return skills.filter((skill) => {
-      const matchesCategory =
-        activeCategory === 'All' || skill.category === activeCategory
-      const query = search.trim().toLowerCase()
-      const matchesSearch =
-        query.length === 0 ||
-        skill.title.toLowerCase().includes(query) ||
-        skill.description.toLowerCase().includes(query) ||
-        skill.provider.toLowerCase().includes(query)
+  const query = search.trim().toLowerCase()
+  const filteredSkills = skills.filter((skill) => {
+    const matchesCategory =
+      activeCategory === 'All' || skill.category === activeCategory
+    const matchesSearch =
+      query.length === 0 ||
+      skill.title.toLowerCase().includes(query) ||
+      skill.description.toLowerCase().includes(query) ||
+      skill.provider.toLowerCase().includes(query)
 
-      return matchesCategory && matchesSearch
-    })
-  }, [activeCategory, search])
+    return matchesCategory && matchesSearch
+  })
 
   return (
     <section className="main-panel">

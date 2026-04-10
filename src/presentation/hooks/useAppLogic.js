@@ -1,9 +1,9 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { flushSync } from 'react-dom';
-import { 
-  getProjectsUseCase, 
-  getWorkspaceUseCase, 
-  updateProjectPromptUseCase 
+import {
+  getProjectsUseCase,
+  getWorkspaceUseCase,
+  updateProjectPromptUseCase
 } from '../../application/di';
 
 export function useAppLogic() {
@@ -14,7 +14,8 @@ export function useAppLogic() {
   const [cookieVisible, setCookieVisible] = useState(true);
   const [draft, setDraft] = useState('');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  
+  const [workspaceSlideDir, setWorkspaceSlideDir] = useState(null);
+
   const [projects, setProjects] = useState([]);
   const [workspace, setWorkspace] = useState(null);
 
@@ -55,12 +56,13 @@ export function useAppLogic() {
     const nextMode = workspaceMode === 'office' ? 'code' : 'office';
     const defaultProjectId = nextMode === 'office' ? 'dcc' : 'mclaunch';
 
-    runWithViewTransition(() => {
-      setWorkspaceMode(nextMode);
-      setSelectedProjectId(defaultProjectId);
-      if (activeView === 'task') setActiveView('home');
-    });
-  }, [workspaceMode, activeView, runWithViewTransition]);
+    // office → code: thumb va a la derecha → nuevo contenido entra desde la derecha
+    // code → office: thumb va a la izquierda → nuevo contenido entra desde la izquierda
+    setWorkspaceSlideDir(nextMode === 'code' ? 'from-right' : 'from-left');
+    setWorkspaceMode(nextMode);
+    setSelectedProjectId(defaultProjectId);
+    if (activeView === 'task') setActiveView('home');
+  }, [workspaceMode, activeView]);
 
   const handleSubmitHomePrompt = useCallback(async () => {
     const defaultProjectId = workspaceMode === 'office' ? 'dcc' : 'mclaunch';
@@ -82,13 +84,14 @@ export function useAppLogic() {
 
   return {
     state: {
-      activeView, workspaceMode, selectedProjectId, loginOpen, cookieVisible, 
-      draft, isSidebarCollapsed, projects, workspace, selectedProject
+      activeView, workspaceMode, selectedProjectId, loginOpen, cookieVisible,
+      draft, isSidebarCollapsed, projects, workspace, selectedProject,
+      workspaceSlideDir,
     },
     actions: {
-      setActiveView, setLoginOpen, setCookieVisible, setDraft, 
-      setIsSidebarCollapsed, openProject, toggleWorkspace, 
-      handleSubmitHomePrompt, runWithViewTransition
+      setActiveView, setLoginOpen, setCookieVisible, setDraft,
+      setIsSidebarCollapsed, openProject, toggleWorkspace,
+      handleSubmitHomePrompt, runWithViewTransition, setWorkspaceSlideDir,
     }
   };
 }

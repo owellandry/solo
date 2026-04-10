@@ -1,9 +1,8 @@
 import {
-  HiOutlineEnvelope,
   HiOutlineEyeSlash,
-  HiOutlineGlobeAlt,
   HiOutlineXMark,
 } from 'react-icons/hi2'
+import { FaGithub, FaGoogle } from 'react-icons/fa'
 
 export function LoginModal({ open, onClose }) {
   if (!open) {
@@ -27,11 +26,11 @@ export function LoginModal({ open, onClose }) {
 
         <div className="social-stack">
           <button className="social-button social-button--dark">
-            <HiOutlineGlobeAlt size={18} />
+            <FaGithub size={18} />
             <span>GitHub</span>
           </button>
           <button className="social-button social-button--dark">
-            <HiOutlineEnvelope size={18} />
+            <FaGoogle size={18} />
             <span>Google</span>
           </button>
         </div>
@@ -48,17 +47,17 @@ export function LoginModal({ open, onClose }) {
           </label>
         </div>
 
-        <button className="text-link">Forget password ?</button>
+        <button className="text-link text-center">Forget password ?</button>
 
         <button className="login-submit">Log in</button>
 
-        <p className="login-note">
+        <p className="login-note text-center">
           Don&apos;t have an account? <button className="text-link inline-link">Sign up</button>
         </p>
 
         <div className="form-divider" />
 
-        <p className="login-legal">
+        <p className="login-legal text-center">
           by continuing, you are agreeing to TRAE&apos;s Terms of Service and Privacy Policy
         </p>
       </div>

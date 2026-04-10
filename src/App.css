@@ -22,7 +22,7 @@
   width: 262px;
   flex: 0 0 262px;
   background: #edeff2;
-  border: 1px solid var(--line);
+  border: none;
   border-radius: 8px;
   padding: 10px;
   display: flex;

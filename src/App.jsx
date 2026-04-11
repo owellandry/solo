@@ -19,6 +19,7 @@ function App() {
           activeView={state.activeView}
           mode={state.workspaceMode}
           isCollapsed={state.isSidebarCollapsed}
+          authUser={state.authUser}
           onToggleCollapse={() => actions.setIsSidebarCollapsed(!state.isSidebarCollapsed)}
           onToggleMode={actions.toggleWorkspace}
           onShowHome={() => actions.runWithViewTransition(() => actions.setActiveView('home'))}
@@ -71,7 +72,11 @@ function App() {
       </div>
 
       <CookieNotice visible={state.cookieVisible} onClose={() => actions.setCookieVisible(false)} />
-      <LoginModal open={state.loginOpen} onClose={() => actions.setLoginOpen(false)} />
+      <LoginModal
+        open={state.loginOpen}
+        onClose={() => actions.setLoginOpen(false)}
+        onLoginSuccess={actions.completeLogin}
+      />
     </>
   );
 }

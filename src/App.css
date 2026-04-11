@@ -292,6 +292,10 @@
   margin-top: auto;
 }
 
+.sidebar__footer--logged {
+  gap: 8px;
+}
+
 .sidebar__login,
 .cookie-notice__action,
 .login-submit,
@@ -326,6 +330,128 @@
   color: var(--heading);
   padding: 8px 14px;
   cursor: pointer;
+}
+
+.access-card {
+  position: relative;
+  border: 1px solid #d9e0eb;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  padding: 12px 12px 10px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+}
+
+.access-card__close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: 0;
+  background: transparent;
+  color: #8b96a8;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.access-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  padding-right: 18px;
+}
+
+.access-card__title-row strong {
+  font-size: 13px;
+  line-height: 1.25;
+  color: #1f2937;
+}
+
+.access-card__icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: inline-grid;
+  place-items: center;
+  background: #ecfdf3;
+  color: #16a34a;
+  flex: 0 0 auto;
+}
+
+.access-card p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #5b6678;
+}
+
+.session-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  min-width: 0;
+}
+
+.session-row__user {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+}
+
+.session-row__avatar {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  border-radius: 5px;
+  display: inline-grid;
+  place-items: center;
+  background: #1794ff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.session-row__name {
+  color: #1f2937;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.session-row__plan {
+  border-radius: 4px;
+  background: #e8f7ed;
+  color: #2e7d52;
+  padding: 1px 5px;
+  font-size: 11px;
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+
+.session-row__desktop {
+  border: 1px solid #d9e0eb;
+  border-radius: 999px;
+  background: #fff;
+  color: #1f2937;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.session-row__desktop:hover {
+  background: #f8fafc;
 }
 
 .workspace {

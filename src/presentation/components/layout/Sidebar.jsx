@@ -1,9 +1,12 @@
 import {
+  HiOutlineArrowDownTray,
   HiOutlineChatBubbleOvalLeftEllipsis,
   HiOutlineFolderOpen,
   HiOutlineFolderPlus,
+  HiOutlineGift,
   HiOutlineSparkles,
   HiOutlineViewColumns,
+  HiOutlineXMark,
 } from 'react-icons/hi2'
 
 export function ModeLogo() {
@@ -55,10 +58,43 @@ export function SidebarTop({ mode, onToggleMode, onToggleCollapse, isCollapsed }
   )
 }
 
+function SidebarLoggedInFooter({ authUser }) {
+  return (
+    <div className="sidebar__footer sidebar__footer--logged">
+      <div className="access-card">
+        <button className="access-card__close" aria-label="Dismiss access card">
+          <HiOutlineXMark size={14} />
+        </button>
+        <div className="access-card__title-row">
+          <span className="access-card__icon">
+            <HiOutlineGift size={15} />
+          </span>
+          <strong>Limited Free Access Is Active</strong>
+        </div>
+        <p>AI requests are free for a limited time. Tell SOLO what you need.</p>
+      </div>
+
+      <div className="session-row">
+        <div className="session-row__user">
+          <span className="session-row__avatar">{authUser.initials}</span>
+          <span className="session-row__name">{authUser.name}</span>
+          <span className="session-row__plan">{authUser.plan}</span>
+        </div>
+
+        <button className="session-row__desktop">
+          <HiOutlineArrowDownTray size={14} />
+          <span>Get Desktop</span>
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export function Sidebar({
   activeView,
   mode,
   isCollapsed,
+  authUser,
   onToggleCollapse,
   onToggleMode,
   onShowHome,
@@ -130,13 +166,17 @@ export function Sidebar({
           )}
         </div>
 
-        <div className="sidebar__footer">
-          <button className="sidebar__login" onClick={onOpenLogin}>
-            <span>Log in</span>
-            <span aria-hidden="true">→</span>
-          </button>
-          <button className="sidebar__desktop">Get Desktop</button>
-        </div>
+        {authUser ? (
+          <SidebarLoggedInFooter authUser={authUser} />
+        ) : (
+          <div className="sidebar__footer">
+            <button className="sidebar__login" onClick={onOpenLogin}>
+              <span>Log in</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button className="sidebar__desktop">Get Desktop</button>
+          </div>
+        )}
       </div>
     </aside>
   )

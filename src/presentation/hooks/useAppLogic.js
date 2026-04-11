@@ -11,6 +11,7 @@ export function useAppLogic() {
   const [workspaceMode, setWorkspaceMode] = useState('office');
   const [selectedProjectId, setSelectedProjectId] = useState('dcc');
   const [loginOpen, setLoginOpen] = useState(false);
+  const [authUser, setAuthUser] = useState(null);
   const [cookieVisible, setCookieVisible] = useState(true);
   const [draft, setDraft] = useState('');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -82,16 +83,30 @@ export function useAppLogic() {
     });
   }, [draft, workspaceMode, runWithViewTransition]);
 
+  const completeLogin = useCallback((user = {}) => {
+    const fallbackName = 'owell polanco';
+    const normalizedName = (user.name || fallbackName).trim();
+    const initials = normalizedName.charAt(0).toUpperCase() || 'O';
+
+    setAuthUser({
+      name: normalizedName,
+      plan: user.plan || 'Pro',
+      initials,
+    });
+    setLoginOpen(false);
+  }, []);
+
   return {
     state: {
       activeView, workspaceMode, selectedProjectId, loginOpen, cookieVisible,
       draft, isSidebarCollapsed, projects, workspace, selectedProject,
-      workspaceSlideDir,
+      workspaceSlideDir, authUser,
     },
     actions: {
       setActiveView, setLoginOpen, setCookieVisible, setDraft,
       setIsSidebarCollapsed, openProject, toggleWorkspace,
       handleSubmitHomePrompt, runWithViewTransition, setWorkspaceSlideDir,
+      completeLogin,
     }
   };
 }

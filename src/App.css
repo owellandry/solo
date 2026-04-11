@@ -775,6 +775,11 @@
   background: transparent;
 }
 
+.task-composer textarea {
+  min-height: 80px; /* Thinner height specifically for the chat composer */
+  padding: 12px 16px;
+}
+
 .composer-card__footer,
 .task-composer__footer {
   padding: 0 14px 14px;
@@ -1173,7 +1178,7 @@
   flex-direction: column;
   flex-shrink: 0;
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 780px;
   width: 100%;
 }
 

@@ -160,7 +160,20 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
   const [activePanel, setActivePanel] = useState(null)
   const [panelTop, setPanelTop] = useState(52)
   const [language, setLanguage] = useState('English')
-  const [theme, setTheme] = useState('Light')
+  
+  // Theme logic
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('solo-theme') || 'Light'
+  })
+
+  useEffect(() => {
+    localStorage.setItem('solo-theme', theme)
+    if (theme === 'Dark') {
+      document.body.classList.add('dark-theme')
+    } else {
+      document.body.classList.remove('dark-theme')
+    }
+  }, [theme])
   const menuRef = useRef(null)
   const itemRefs = useRef({})
 

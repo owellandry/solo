@@ -1,0 +1,144 @@
+/* CSS for dark mode theme overrides */
+.dark-theme {
+  --bg: #121212;
+  --panel: #1e1e1e;
+  --panel-soft: #2a2a2a;
+  --line: #333333;
+  --heading: #f3f4f6;
+  --muted: #9ca3af;
+  --accent: #8f54ff;
+}
+
+/* Global transitions for smooth theme switching */
+body, .app-shell, .sidebar, .main-panel, .task-main, .task-sidepanel, 
+.feature-card, .composer-card, .skill-card, .access-card, .project-list__item, 
+.sidebar__nav-item, button, input, textarea, div, span, p, h1, h2, h3, h4, h5, h6 {
+  transition-property: background-color, background, color, border-color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Specific elements that need to keep their width/transform transitions */
+.sidebar {
+  transition-property: background-color, background, color, border-color, width, flex-basis, padding, transform, opacity;
+}
+
+/* Dark mode overrides */
+body.dark-theme {
+  background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%);
+  color: var(--heading);
+}
+
+.dark-theme .app-shell,
+.dark-theme .sidebar {
+  background-color: #18181b !important;
+}
+
+.dark-theme .main-panel,
+.dark-theme .task-main,
+.dark-theme .task-sidepanel,
+.dark-theme .task-composer,
+.dark-theme .composer-card,
+.dark-theme .feature-card,
+.dark-theme .skill-card,
+.dark-theme .access-card,
+.dark-theme .login-modal {
+  background: var(--panel) !important;
+  color: var(--heading);
+  border-color: var(--line) !important;
+}
+
+.dark-theme .task-header,
+.dark-theme .topbar,
+.dark-theme .composer-card__footer,
+.dark-theme .task-composer__footer,
+.dark-theme .sidebar__footer,
+.dark-theme .sidebar__top {
+  border-color: var(--line) !important;
+}
+
+.dark-theme .sidebar__nav-item,
+.dark-theme .project-list__item {
+  color: var(--heading) !important;
+}
+
+.dark-theme .sidebar__nav-item.is-active,
+.dark-theme .project-list__item.is-selected {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme .sidebar__ghost:hover,
+.dark-theme .composer-button:hover,
+.dark-theme .task-sidepanel__compact:hover,
+.dark-theme .skill-card__action:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme .mode-switch {
+  background: #2a2a2a !important;
+  color: #fff !important;
+}
+
+.dark-theme .mode-switch__thumb {
+  background: #1e1e1e !important;
+  border-color: #444 !important;
+}
+
+.dark-theme .mode-switch__value {
+  color: #e5e7eb !important;
+}
+
+.dark-theme .message--user .message__bubble {
+  background: #2a2a2a !important;
+  color: #e5e7eb !important;
+}
+
+.dark-theme .assistant-chip {
+  background: #2a2a2a !important;
+  border-color: var(--line) !important;
+}
+
+.dark-theme .assistant-chip code {
+  color: #a78bfa !important;
+}
+
+.dark-theme input,
+.dark-theme textarea {
+  background: transparent !important;
+  color: var(--heading) !important;
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+  color: var(--muted) !important;
+}
+
+.dark-theme .searchbox {
+  background: #2a2a2a !important;
+  border-color: var(--line) !important;
+}
+
+.dark-theme .user-menu-popover .user-menu,
+.dark-theme .user-menu-popover .user-submenu {
+  background: #2a2a2a !important;
+  border-color: var(--line) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-theme .user-menu__item:hover,
+.dark-theme .user-submenu__item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-theme .user-menu__divider {
+  background: var(--line) !important;
+}
+
+.dark-theme .pill-row .pill {
+  background: transparent !important;
+  color: var(--heading) !important;
+}
+
+.dark-theme .pill-row .pill.is-active {
+  background: rgba(255, 255, 255, 0.1) !important;
+}

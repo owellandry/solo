@@ -1027,9 +1027,12 @@
 }
 
 .message--user {
-  justify-self: center;
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   max-width: 566px;
-  width: 100%;
+  width: auto;
 }
 
 .message__bubble {

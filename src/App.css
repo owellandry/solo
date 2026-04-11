@@ -1581,3 +1581,8 @@ body.ui-transitioning #root {
     grid-template-columns: 1fr;
   }
 }
+
+/* Styling for collapsed sidepanel state */
+.task-layout--sidepanel-collapsed {
+  grid-template-columns: 1fr;
+}

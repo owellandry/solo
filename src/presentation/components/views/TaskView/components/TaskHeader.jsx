@@ -1,7 +1,7 @@
 import { HiOutlineBars3 } from 'react-icons/hi2';
 import { SidebarTop } from '../../../layout/sidebar/SidebarTop';
 
-export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleCollapse }) {
+export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleCollapse, onToggleSidepanel }) {
   return (
     <header className="task-header">
       <div className="task-header__left">
@@ -21,7 +21,7 @@ export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleC
           </p>
         </div>
       </div>
-      <button className="sidebar__ghost">
+      <button className="sidebar__ghost" onClick={onToggleSidepanel} aria-label="Toggle sidepanel">
         <HiOutlineBars3 size={15} />
       </button>
     </header>

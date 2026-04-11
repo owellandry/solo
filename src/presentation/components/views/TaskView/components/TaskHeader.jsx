@@ -2,7 +2,15 @@ import { HiOutlineBars3 } from 'react-icons/hi2';
 import { FaGithub } from 'react-icons/fa6';
 import { SidebarTop } from '../../../layout/sidebar/SidebarTop';
 
-export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleCollapse, onToggleSidepanel }) {
+export function TaskHeader({
+  project,
+  mode,
+  onToggleMode,
+  isCollapsed,
+  onToggleCollapse,
+  onToggleSidepanel,
+  isSidepanelOpen,
+}) {
   return (
     <header className="task-header">
       <div className="task-header__left">
@@ -35,6 +43,7 @@ export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleC
           className="task-header__action"
           onClick={onToggleSidepanel}
           aria-label="Toggle sidepanel"
+          aria-expanded={isSidepanelOpen}
         >
           <HiOutlineBars3 size={15} />
         </button>

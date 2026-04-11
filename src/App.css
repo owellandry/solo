@@ -1323,36 +1323,22 @@
 
 @media (max-width: 920px) {
   .app-shell {
-    flex-direction: column;
     gap: 8px;
   }
 
   .sidebar {
-    width: 100%;
-    flex-basis: auto;
-    min-height: auto;
-    height: auto;
-    position: static;
-    transform: none;
+    width: 262px;
+    flex: 0 0 262px;
+    height: calc(100vh - 16px);
+    position: sticky;
   }
 
-  .app-shell.is-sidebar-collapsed {
-    gap: 8px;
+  .workspace {
+    width: 100%;
   }
 
   .sidebar.is-collapsed {
-    width: 100%;
-    flex-basis: auto;
-    padding: 10px;
-    border-color: var(--line);
-    opacity: 1;
-    transform: none;
-  }
-
-  .sidebar.is-collapsed .sidebar__content {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
+    display: none;
   }
 
   .sidebar__empty {

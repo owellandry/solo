@@ -1498,44 +1498,36 @@ body.ui-transitioning #root {
 /* Responsive improvements for Task View */
 .task-header__info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   gap: 2px;
 }
 
+.task-header__info h2 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
 .task-header__separator {
-  display: none;
+  display: inline-block;
   color: var(--muted);
   margin: 0 6px;
+}
+
+.task-header__info p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
   /* Prevent the task-layout from collapsing into 1 column when the sidepanel is visible */
   .task-layout:not(.task-layout--sidepanel-collapsed) {
     grid-template-columns: minmax(0, 1fr) 250px;
-  }
-  
-  /* Make the header title and meta inline */
-  .task-header__info {
-    flex-direction: row;
-    align-items: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .task-header__info h2 {
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
-  .task-header__separator {
-    display: inline-block;
-  }
-  
-  .task-header__info p {
-    font-size: 13px;
-    color: var(--muted);
-    margin: 0;
   }
 }
 

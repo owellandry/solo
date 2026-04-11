@@ -212,19 +212,20 @@
 
 .sidebar__nav {
   display: grid;
-  gap: 6px;
-  margin-top: 18px;
+  gap: 2px;
+  margin-top: 12px;
 }
 
 .sidebar__nav-item,
 .project-list__item {
   width: 100%;
   border: 0;
-  padding: 10px 8px;
+  padding: 6px 8px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
   border-radius: 6px;
   color: var(--heading);
   background: transparent;
@@ -260,7 +261,7 @@
   margin: auto 0;
   display: grid;
   justify-items: center;
-  gap: 6px;
+  gap: 4px;
   color: var(--muted);
   text-align: center;
 }
@@ -268,25 +269,31 @@
 .sidebar__empty strong {
   color: var(--muted);
   font-weight: 500;
-}
-
-.sidebar__empty p {
   font-size: 13px;
 }
 
+.sidebar__empty p {
+  font-size: 12px;
+}
+
 .sidebar__empty-icon {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   border: 1px solid var(--line);
   display: grid;
   place-items: center;
 }
 
+.sidebar__empty-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
 .project-list {
   display: grid;
-  gap: 4px;
-  margin-top: 10px;
+  gap: 2px;
+  margin-top: 8px;
 }
 
 .sidebar__footer {

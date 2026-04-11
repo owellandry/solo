@@ -1,0 +1,144 @@
+{
+  "sidebar": {
+    "mode": {
+      "code": "代码",
+      "mtc": "MTC",
+      "switch": "切换到 {{mode}} 模式"
+    },
+    "nav": {
+      "newTask": "新任务",
+      "skills": "技能"
+    },
+    "projects": {
+      "title": "项目列表",
+      "emptyTitle": "暂无项目",
+      "emptyDesc": "选择一个项目开始"
+    },
+    "footer": {
+      "freeAccessTitle": "限时免费访问已激活",
+      "freeAccessDesc": "AI 请求在限时内免费。告诉 SOLO 您需要什么。",
+      "getDesktop": "获取桌面应用",
+      "login": "登录"
+    },
+    "menu": {
+      "manageAccount": "管理帐户",
+      "language": "语言",
+      "theme": "主题",
+      "settings": "设置",
+      "downloadDesktop": "下载 SOLO 桌面版",
+      "logout": "退出"
+    },
+    "submenu": {
+      "account": "帐户",
+      "planBilling": "计划与计费",
+      "usage": "使用情况"
+    }
+  },
+  "home": {
+    "beta": "测试版"
+  },
+  "composer": {
+    "createProject": "创建项目",
+    "editPrompt": "编辑提示词",
+    "addMedia": "添加媒体",
+    "model": "SOLO 自动模型",
+    "selectRepo": "选择代码库",
+    "selectBranch": "选择分支",
+    "defaultEnv": "默认环境",
+    "placeholder": "帮助您整理文献综述、制作 PPT、分析 Excel 数据及其他日常工作，输出专业成果。"
+  },
+  "skills": {
+    "upload": "上传技能",
+    "title": "技能",
+    "desc": "安装和管理技能，为 SOLO 解锁新功能。",
+    "search": "搜索",
+    "marketplace": "市场",
+    "developerTools": "开发者工具",
+    "byProvider": "由 {{provider}} 提供"
+  },
+  "task": {
+    "imagesAttached": "已附加 {{count}} 张图片",
+    "soloCode": "SOLO 代码",
+    "thought": "思考",
+    "commandExecuted": "已执行命令",
+    "previewWebPage": "预览网页",
+    "artifacts": "产物",
+    "completed": "已完成",
+    "workedFor": "工作了 {{time}}",
+    "sidepanel": {
+      "todo": "待办事项",
+      "completedCount": "已完成 {{count}} 项",
+      "taskOutputs": "任务输出",
+      "context": "上下文",
+      "references": "参考资料",
+      "compact": "紧凑"
+    }
+  },
+  "login": {
+    "title": "登录",
+    "github": "GitHub",
+    "google": "Google",
+    "emailLabel": "电子邮件",
+    "emailPlaceholder": "电子邮件",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "密码",
+    "forgetPassword": "忘记密码？",
+    "noAccount": "没有帐户？",
+    "signUp": "注册",
+    "agreePrefix": "继续即表示您同意 TRAE 的服务条款和隐私政策",
+    "submit": "登录"
+  },
+  "cookies": {
+    "title": "Cookie 通知",
+    "notice": "TRAE 使用 Cookie 和类似技术来提供、保护、分析、改进和营销我们的服务。在我们的 Cookie 政策中了解更多信息。",
+    "accept": "知道了"
+  },
+  "workspace": {
+    "office": {
+      "heroTitle": "不止于代码",
+      "heroSubtitle": "让 SOLO 处理您的所有办公任务",
+      "heroDescription": "帮助您整理文献综述、制作 PPT、分析 Excel 数据及其他日常工作，输出专业成果。",
+      "cards": {
+        "reading": {
+          "title": "网页阅读",
+          "desc": "阅读在线论文以制作文献综述。"
+        },
+        "research": {
+          "title": "研究与分析",
+          "desc": "研究视频平台并生成演示文稿。"
+        },
+        "mining": {
+          "title": "数据挖掘",
+          "desc": "挖掘 AI 市场数据并分析数据趋势。"
+        },
+        "content": {
+          "title": "内容创作",
+          "desc": "使用素材生成促销帖子。"
+        }
+      }
+    },
+    "code": {
+      "heroTitle": "与 SOLO 一起编程",
+      "heroSubtitle": "让 SOLO 处理您的所有开发任务",
+      "heroDescription": "帮助您编写代码、调试、优化性能及其他开发工作，交付生产级代码。",
+      "cards": {
+        "app-dev": {
+          "title": "应用程序开发",
+          "desc": "实现多语言学习平台。"
+        },
+        "understanding": {
+          "title": "项目理解",
+          "desc": "分析项目代码库并生成代码维基。"
+        },
+        "game": {
+          "title": "游戏创意",
+          "desc": "创建像素风机甲战斗游戏。"
+        },
+        "automation": {
+          "title": "自动化工具",
+          "desc": "编写用于收集数据的自动化工具。"
+        }
+      }
+    }
+  }
+}

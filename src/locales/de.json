@@ -1,0 +1,144 @@
+{
+  "sidebar": {
+    "mode": {
+      "code": "Code",
+      "mtc": "MTC",
+      "switch": "In den {{mode}}-Modus wechseln"
+    },
+    "nav": {
+      "newTask": "Neue Aufgabe",
+      "skills": "Fähigkeiten"
+    },
+    "projects": {
+      "title": "Projektliste",
+      "emptyTitle": "Noch keine Projekte",
+      "emptyDesc": "Wählen Sie ein Projekt, um zu beginnen"
+    },
+    "footer": {
+      "freeAccessTitle": "Begrenzter kostenloser Zugang aktiv",
+      "freeAccessDesc": "KI-Anfragen sind für eine begrenzte Zeit kostenlos. Sagen Sie SOLO, was Sie brauchen.",
+      "getDesktop": "Desktop-App holen",
+      "login": "Anmelden"
+    },
+    "menu": {
+      "manageAccount": "Konto verwalten",
+      "language": "Sprache",
+      "theme": "Design",
+      "settings": "Einstellungen",
+      "downloadDesktop": "SOLO Desktop herunterladen",
+      "logout": "Abmelden"
+    },
+    "submenu": {
+      "account": "Konto",
+      "planBilling": "Plan & Abrechnung",
+      "usage": "Nutzung"
+    }
+  },
+  "home": {
+    "beta": "BETA"
+  },
+  "composer": {
+    "createProject": "Projekt erstellen",
+    "editPrompt": "Prompt bearbeiten",
+    "addMedia": "Medien hinzufügen",
+    "model": "SOLO Auto-Modell",
+    "selectRepo": "Repo auswählen",
+    "selectBranch": "Branch auswählen",
+    "defaultEnv": "Standardumgebung",
+    "placeholder": "Hilft Ihnen, Literaturrecherchen zu organisieren, PPTs zu erstellen, Excel-Daten zu analysieren und andere tägliche Arbeiten zu erledigen und liefert professionelle Ergebnisse."
+  },
+  "skills": {
+    "upload": "Fähigkeit hochladen",
+    "title": "Fähigkeiten",
+    "desc": "Installieren und verwalten Sie Fähigkeiten, um neue Funktionen für SOLO freizuschalten.",
+    "search": "Suchen",
+    "marketplace": "Marktplatz",
+    "developerTools": "Entwicklertools",
+    "byProvider": "von {{provider}}"
+  },
+  "task": {
+    "imagesAttached": "Bilder angehängt {{count}}",
+    "soloCode": "SOLO Code",
+    "thought": "Gedanke",
+    "commandExecuted": "Befehl ausgeführt",
+    "previewWebPage": "Webseitevorschau",
+    "artifacts": "Artefakte",
+    "completed": "Abgeschlossen",
+    "workedFor": "Arbeitete für {{time}}",
+    "sidepanel": {
+      "todo": "Zu erledigen",
+      "completedCount": "{{count}} abgeschlossen",
+      "taskOutputs": "Aufgabenergebnisse",
+      "context": "Kontext",
+      "references": "Referenzen",
+      "compact": "kompakt"
+    }
+  },
+  "login": {
+    "title": "Anmelden",
+    "github": "GitHub",
+    "google": "Google",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Passwort",
+    "forgetPassword": "Passwort vergessen?",
+    "noAccount": "Haben Sie kein Konto?",
+    "signUp": "Registrieren",
+    "agreePrefix": "Indem Sie fortfahren, stimmen Sie den Nutzungsbedingungen und der Datenschutzrichtlinie von TRAE zu",
+    "submit": "Anmelden"
+  },
+  "cookies": {
+    "title": "Cookie-Hinweis",
+    "notice": "TRAE verwendet Cookies und ähnliche Technologien, um unsere Dienste bereitzustellen, zu sichern, zu analysieren, zu verbessern und zu vermarkten. Weitere Informationen finden Sie in unserer Cookie-Richtlinie.",
+    "accept": "Verstanden"
+  },
+  "workspace": {
+    "office": {
+      "heroTitle": "Mehr als nur Code",
+      "heroSubtitle": "Lassen Sie SOLO alle Ihre Büroaufgaben erledigen",
+      "heroDescription": "Hilft Ihnen, Literaturrecherchen zu organisieren, PPTs zu erstellen, Excel-Daten zu analysieren und andere tägliche Arbeiten zu erledigen, und liefert professionelle Ergebnisse.",
+      "cards": {
+        "reading": {
+          "title": "Web-Lesen",
+          "desc": "Lesen Sie Online-Papiere, um Literaturrecherchen zu erstellen."
+        },
+        "research": {
+          "title": "Forschung und Analyse",
+          "desc": "Recherchieren Sie Videoplattformen und generieren Sie Präsentationen."
+        },
+        "mining": {
+          "title": "Data Mining",
+          "desc": "Extrahieren Sie KI-Marktdaten und analysieren Sie Trends."
+        },
+        "content": {
+          "title": "Inhaltserstellung",
+          "desc": "Generieren Sie Werbebeiträge mit Materialien."
+        }
+      }
+    },
+    "code": {
+      "heroTitle": "Codieren mit SOLO",
+      "heroSubtitle": "Lassen Sie SOLO alle Ihre Entwicklungsaufgaben erledigen",
+      "heroDescription": "Hilft Ihnen, Code zu schreiben, zu debuggen, die Leistung zu optimieren und andere Entwicklungsarbeiten zu erledigen, und liefert produktionsreifen Code.",
+      "cards": {
+        "app-dev": {
+          "title": "App-Entwicklung",
+          "desc": "Implementieren Sie eine mehrsprachige Lernplattform."
+        },
+        "understanding": {
+          "title": "Projektverständnis",
+          "desc": "Analysieren Sie das Projekt-Repository und generieren Sie ein Code-Wiki."
+        },
+        "game": {
+          "title": "Spielekreativität",
+          "desc": "Erstellen Sie ein Pixel-Art-Mecha-Kampfspiel."
+        },
+        "automation": {
+          "title": "Automatisierungstools",
+          "desc": "Schreiben Sie ein Automatisierungstool zum Sammeln von Daten."
+        }
+      }
+    }
+  }
+}

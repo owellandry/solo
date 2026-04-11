@@ -9,7 +9,18 @@ import {
   HiOutlineXMark,
 } from 'react-icons/hi2'
 
-const languageOptions = ['Español', 'English', 'Português']
+const languageOptions = [
+  'English',
+  'Español',
+  'Português',
+  'Français',
+  'Deutsch',
+  'Русский',
+  'Bahasa Indonesia',
+  '中文',
+  '日本語',
+  'العربية'
+]
 const themeOptions = ['Dark', 'Light']
 
 function UserSubmenu({
@@ -172,9 +183,16 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
   
   // Maps lang code to Label
   const langMap = {
-    'es': 'Español',
     'en': 'English',
-    'pt': 'Português'
+    'es': 'Español',
+    'pt': 'Português',
+    'fr': 'Français',
+    'de': 'Deutsch',
+    'ru': 'Русский',
+    'id': 'Bahasa Indonesia',
+    'zh': '中文',
+    'ja': '日本語',
+    'ar': 'العربية'
   };
   
   const [language, setLanguage] = useState(() => {
@@ -188,9 +206,8 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
     
     setTimeout(() => {
       setLanguage(newLangLabel)
-      let newCode = 'en';
-      if (newLangLabel === 'Español') newCode = 'es';
-      if (newLangLabel === 'Português') newCode = 'pt';
+      
+      const newCode = Object.keys(langMap).find(key => langMap[key] === newLangLabel) || 'en';
       
       i18n.changeLanguage(newCode);
       localStorage.setItem('solo-lang', newCode);

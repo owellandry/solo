@@ -17,8 +17,16 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+.claude
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# rust target
+target
+Cargo.lock
+
+# Runbox proyect
+runbox

@@ -1,31 +1,9 @@
 import { useState } from 'react'
 import { HiOutlineMagnifyingGlass, HiOutlinePlus } from 'react-icons/hi2'
-import { FaGithub } from 'react-icons/fa6'
-import { RiRobot2Line } from 'react-icons/ri'
-import { SiOpenai, SiRedis, SiVercel } from 'react-icons/si'
 
 import { useSkills } from './useSkills'
-import { SidebarTop } from '../layout/Sidebar'
-
-function ProviderMark({ type }) {
-  if (type === 'github') {
-    return <FaGithub className="provider-mark provider-mark--github" size={24} />
-  }
-
-  if (type === 'vercel') {
-    return <SiVercel className="provider-mark provider-mark--vercel" size={20} />
-  }
-
-  if (type === 'redis') {
-    return <SiRedis className="provider-mark provider-mark--redis" size={20} />
-  }
-
-  if (type === 'openai') {
-    return <SiOpenai className="provider-mark provider-mark--openai" size={20} />
-  }
-
-  return <RiRobot2Line className="provider-mark provider-mark--ai" size={22} />
-}
+import { SidebarTop } from '../layout/sidebar/SidebarTop'
+import { SkillCard } from './skills/SkillCard'
 
 export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }) {
   const { skills, categories } = useSkills()
@@ -102,21 +80,7 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
 
         <div className="skills-grid">
           {filteredSkills.map((skill) => (
-            <article className="skill-card" key={skill.id}>
-              <div className="skill-card__brand">
-                <ProviderMark type={skill.icon} />
-              </div>
-
-              <div className="skill-card__body">
-                <h3>{skill.title}</h3>
-                <p>{skill.description}</p>
-                <span>by {skill.provider}</span>
-              </div>
-
-              <button className="skill-card__action">
-                <HiOutlinePlus size={16} />
-              </button>
-            </article>
+            <SkillCard key={skill.id} skill={skill} />
           ))}
         </div>
       </div>

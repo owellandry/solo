@@ -20,7 +20,7 @@ export function HomeView({
   const titleParts = heroTitle.split(' ')
 
   return (
-    <section className="main-panel">
+    <section className="main-panel main-panel--home">
       <header className="topbar">
         <div>
           {isCollapsed && (
@@ -35,31 +35,41 @@ export function HomeView({
         <button className="topbar__action">{t('sidebar.footer.getDesktop')}</button>
       </header>
 
-      <div className="hero-layout">
-        <div className="hero-copy">
-          <h1>
-            <span className={`hero-copy__accent hero-copy__accent--${workspace.accent}`}>
-              {titleParts.slice(0, 1).join(' ')}
-            </span>{' '}
-            {titleParts.slice(1).join(' ')}
-            <span className="beta-badge">{t('home.beta')}</span>
-          </h1>
-          <p>{heroSubtitle}</p>
+      <div className="workspace-home">
+        <div className="welcome-title-wrapper">
+          <div className="welcome-title">
+            <div className="animation-container">
+              <div className="hero-copy">
+                <h1>
+                  <span className={`hero-copy__accent hero-copy__accent--${workspace.accent}`}>
+                    {titleParts.slice(0, 1).join(' ')}
+                  </span>{' '}
+                  {titleParts.slice(1).join(' ')}
+                  <span className="beta-badge">{t('home.beta')}</span>
+                </h1>
+                <p>{heroSubtitle}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="feature-grid">
-          {workspace.cards.map((item) => (
-            <FeatureCard key={item.id} item={item} themeMode={themeMode} />
-          ))}
+        <div className="showcase-wrapper">
+          <div className="feature-grid">
+            {workspace.cards.map((item) => (
+              <FeatureCard key={item.id} item={item} themeMode={themeMode} />
+            ))}
+          </div>
         </div>
 
-        <ComposerCard
-          draft={draft}
-          onDraftChange={onDraftChange}
-          onSubmit={onSubmit}
-          workspace={workspace}
-          themeMode={themeMode}
-        />
+        <div className="message-input-container">
+          <ComposerCard
+            draft={draft}
+            onDraftChange={onDraftChange}
+            onSubmit={onSubmit}
+            workspace={workspace}
+            themeMode={themeMode}
+          />
+        </div>
       </div>
     </section>
   )

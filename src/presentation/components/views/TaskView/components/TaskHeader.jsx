@@ -14,20 +14,31 @@ export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleC
             isCollapsed={isCollapsed}
           />
         )}
-        <div className="task-header__info">
-          <h2>{project.title}</h2>
-          <span className="task-header__separator">|</span>
-          <div className="task-header__repo">
-            <FaGithub size={13} />
-            <span>{project.repository}</span>
+        <div className="task-header__center">
+          <div className="task-header__title-row">
+            <h2>{project.title}</h2>
+            <div className="task-header__subtitle">
+              <div className="task-header__repo">
+                <FaGithub size={13} />
+                <span>{project.repository}</span>
+              </div>
+              <span className="task-header__dot">&nbsp;·&nbsp;</span>
+              <span className="task-header__item">{project.branch}</span>
+              <span className="task-header__dot">&nbsp;·&nbsp;</span>
+              <p>{project.updatedAt}</p>
+            </div>
           </div>
-          <span className="task-header__separator">|</span>
-          <p>{project.updatedAt}</p>
         </div>
       </div>
-      <button className="sidebar__ghost" onClick={onToggleSidepanel} aria-label="Toggle sidepanel">
-        <HiOutlineBars3 size={15} />
-      </button>
+      <div className="task-header__right">
+        <button
+          className="task-header__action"
+          onClick={onToggleSidepanel}
+          aria-label="Toggle sidepanel"
+        >
+          <HiOutlineBars3 size={15} />
+        </button>
+      </div>
     </header>
   );
 }

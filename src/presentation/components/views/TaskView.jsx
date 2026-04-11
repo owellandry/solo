@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TaskMain } from './TaskView/TaskMain';
 import { TaskSidepanel } from './TaskView/TaskSidepanel';
+import { TaskHeader } from './TaskView/components/TaskHeader';
 
 export function TaskView({ project, mode, onToggleMode, isCollapsed, onToggleCollapse }) {
   const [isSidepanelCollapsed, setIsSidepanelCollapsed] = useState(false);
@@ -11,7 +12,7 @@ export function TaskView({ project, mode, onToggleMode, isCollapsed, onToggleCol
 
   return (
     <section className={`task-layout ${isSidepanelCollapsed ? 'task-layout--sidepanel-collapsed' : ''}`}>
-      <TaskMain
+      <TaskHeader
         project={project}
         mode={mode}
         onToggleMode={onToggleMode}
@@ -19,7 +20,16 @@ export function TaskView({ project, mode, onToggleMode, isCollapsed, onToggleCol
         onToggleCollapse={onToggleCollapse}
         onToggleSidepanel={toggleSidepanel}
       />
-      {!isSidepanelCollapsed && <TaskSidepanel project={project} />}
+
+      <TaskMain
+        project={project}
+      />
+
+      {!isSidepanelCollapsed && (
+        <div className="task-sidepanel-container container-ihs1TM">
+          <TaskSidepanel project={project} mode={mode} />
+        </div>
+      )}
     </section>
   );
 }

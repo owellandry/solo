@@ -1510,9 +1510,9 @@ body.ui-transitioning #root {
 }
 
 @media (max-width: 1024px) {
-  /* Hide the right sidepanel on smaller screens completely */
-  .task-sidepanel {
-    display: none !important;
+  /* Prevent the task-layout from collapsing into 1 column when the sidepanel is visible */
+  .task-layout:not(.task-layout--sidepanel-collapsed) {
+    grid-template-columns: minmax(0, 1fr) 250px;
   }
   
   /* Make the header title and meta inline */
@@ -1537,11 +1537,6 @@ body.ui-transitioning #root {
     font-size: 13px;
     color: var(--muted);
     margin: 0;
-  }
-  
-  /* Make the main layout single column */
-  .task-layout {
-    grid-template-columns: 1fr;
   }
 }
 

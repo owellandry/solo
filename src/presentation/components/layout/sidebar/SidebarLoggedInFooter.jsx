@@ -57,7 +57,7 @@ function UserSubmenu({
 
   if (panel === 'language') {
     return (
-      <div className="user-submenu" style={{ top }} role="menu">
+      <div className="user-submenu user-submenu--grid" style={{ top }} role="menu">
         {languageOptions.map((option) => (
           <button
             key={option}

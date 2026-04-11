@@ -1555,3 +1555,29 @@ body.ui-transitioning #root {
     display: none;
   }
 }
+
+/* Grid layout for language submenu */
+.user-submenu--grid {
+  width: max-content;
+  max-width: calc(100vw - 20px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+@media (max-width: 768px) {
+  .user-submenu--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .user-submenu {
+    left: 0;
+    top: auto !important;
+    bottom: calc(100% + 8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .user-submenu--grid {
+    grid-template-columns: 1fr;
+  }
+}

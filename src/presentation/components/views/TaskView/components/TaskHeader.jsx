@@ -1,4 +1,5 @@
 import { HiOutlineBars3 } from 'react-icons/hi2';
+import { FaGithub } from 'react-icons/fa6';
 import { SidebarTop } from '../../../layout/sidebar/SidebarTop';
 
 export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleCollapse, onToggleSidepanel }) {
@@ -15,10 +16,13 @@ export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleC
         )}
         <div className="task-header__info">
           <h2>{project.title}</h2>
-          <span className="task-header__separator">·</span>
-          <p>
-            {project.repository} · {project.branch} · {project.updatedAt}
-          </p>
+          <span className="task-header__separator">|</span>
+          <div className="task-header__repo">
+            <FaGithub size={13} />
+            <span>{project.repository}</span>
+          </div>
+          <span className="task-header__separator">|</span>
+          <p>{project.updatedAt}</p>
         </div>
       </div>
       <button className="sidebar__ghost" onClick={onToggleSidepanel} aria-label="Toggle sidepanel">

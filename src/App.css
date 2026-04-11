@@ -1572,3 +1572,12 @@ body.ui-transitioning #root {
 .task-layout--sidepanel-collapsed {
   grid-template-columns: 1fr;
 }
+
+/* Styling for the new repository info with GitHub icon */
+.task-header__repo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}

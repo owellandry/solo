@@ -96,6 +96,10 @@ export function useAppLogic() {
     setLoginOpen(false);
   }, []);
 
+  const logout = useCallback(() => {
+    setAuthUser(null);
+  }, []);
+
   return {
     state: {
       activeView, workspaceMode, selectedProjectId, loginOpen, cookieVisible,
@@ -106,7 +110,7 @@ export function useAppLogic() {
       setActiveView, setLoginOpen, setCookieVisible, setDraft,
       setIsSidebarCollapsed, openProject, toggleWorkspace,
       handleSubmitHomePrompt, runWithViewTransition, setWorkspaceSlideDir,
-      completeLogin,
+      completeLogin, logout,
     }
   };
 }

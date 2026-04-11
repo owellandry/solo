@@ -20,6 +20,7 @@ function App() {
           mode={state.workspaceMode}
           isCollapsed={state.isSidebarCollapsed}
           authUser={state.authUser}
+          onLogout={actions.logout}
           onToggleCollapse={() => actions.setIsSidebarCollapsed(!state.isSidebarCollapsed)}
           onToggleMode={actions.toggleWorkspace}
           onShowHome={() => actions.runWithViewTransition(() => actions.setActiveView('home'))}

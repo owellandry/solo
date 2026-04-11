@@ -182,19 +182,42 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
   })
   
   const handleLanguageChange = (newLangLabel) => {
-    setLanguage(newLangLabel)
-    let newCode = 'en';
-    if (newLangLabel === 'Español') newCode = 'es';
-    if (newLangLabel === 'Português') newCode = 'pt';
+    if (newLangLabel === language) return;
     
-    i18n.changeLanguage(newCode);
-    localStorage.setItem('solo-lang', newCode);
+    document.body.classList.add('ui-transitioning');
+    
+    setTimeout(() => {
+      setLanguage(newLangLabel)
+      let newCode = 'en';
+      if (newLangLabel === 'Español') newCode = 'es';
+      if (newLangLabel === 'Português') newCode = 'pt';
+      
+      i18n.changeLanguage(newCode);
+      localStorage.setItem('solo-lang', newCode);
+      
+      setTimeout(() => {
+        document.body.classList.remove('ui-transitioning');
+      }, 50);
+    }, 150);
   }
   
   // Theme logic
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('solo-theme') || 'Light'
   })
+
+  const handleThemeChange = (newTheme) => {
+    if (newTheme === theme) return;
+    
+    document.body.classList.add('ui-transitioning');
+    
+    setTimeout(() => {
+      setTheme(newTheme);
+      setTimeout(() => {
+        document.body.classList.remove('ui-transitioning');
+      }, 50);
+    }, 150);
+  }
 
   useEffect(() => {
     localStorage.setItem('solo-theme', theme)
@@ -291,7 +314,7 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
             theme={theme}
             onSelectPanel={handleSelectPanel}
             onLanguageChange={handleLanguageChange}
-            onThemeChange={setTheme}
+            onThemeChange={handleThemeChange}
             onLogout={handleLogout}
             itemRefs={itemRefs}
           />

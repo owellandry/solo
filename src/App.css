@@ -1485,3 +1485,13 @@
     border-right: 0;
   }
 }
+
+/* Global UI Transitions for Theme and Language changes */
+#root {
+  transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+body.ui-transitioning #root {
+  opacity: 0.3;
+  filter: blur(2px);
+}

@@ -12,7 +12,10 @@ export function useAppLogic() {
   const [selectedProjectId, setSelectedProjectId] = useState('dcc');
   const [loginOpen, setLoginOpen] = useState(false);
   const [authUser, setAuthUser] = useState(null);
-  const [cookieVisible, setCookieVisible] = useState(true);
+  const [cookieVisible, setCookieVisible] = useState(() => {
+    const saved = localStorage.getItem('system_cookie_open_modal');
+    return saved !== 'false';
+  });
   const [draft, setDraft] = useState('');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [workspaceSlideDir, setWorkspaceSlideDir] = useState(null);
@@ -100,6 +103,11 @@ export function useAppLogic() {
     setAuthUser(null);
   }, []);
 
+  const handleCloseCookie = useCallback(() => {
+    localStorage.setItem('system_cookie_open_modal', 'false');
+    setCookieVisible(false);
+  }, []);
+
   return {
     state: {
       activeView, workspaceMode, selectedProjectId, loginOpen, cookieVisible,
@@ -107,7 +115,7 @@ export function useAppLogic() {
       workspaceSlideDir, authUser,
     },
     actions: {
-      setActiveView, setLoginOpen, setCookieVisible, setDraft,
+      setActiveView, setLoginOpen, setCookieVisible: handleCloseCookie, setDraft,
       setIsSidebarCollapsed, openProject, toggleWorkspace,
       handleSubmitHomePrompt, runWithViewTransition, setWorkspaceSlideDir,
       completeLogin, logout,

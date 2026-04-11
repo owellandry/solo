@@ -18,7 +18,7 @@ export function CookieNotice({ visible, onClose }) {
       <p>
         {t('cookies.notice')}
       </p>
-      <button className="cookie-notice__action">{t('cookies.accept')}</button>
+      <button className="cookie-notice__action" onClick={onClose}>{t('cookies.accept')}</button>
     </aside>
   )
 }

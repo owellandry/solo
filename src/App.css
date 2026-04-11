@@ -991,12 +991,12 @@
 }
 
 .task-main {
-  padding: 0 14px 16px;
+  padding: 0 14px 24px;
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  max-height: 100vh;
+  height: calc(100vh - 24px);
+  max-height: calc(100vh - 24px);
   overflow: hidden;
 }
 

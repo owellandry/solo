@@ -8,33 +8,37 @@ import {
 } from 'react-icons/hi2'
 import { FaGithub } from 'react-icons/fa6'
 import { BiGitBranch } from 'react-icons/bi'
+import { useTranslation } from 'react-i18next'
 
-export function ComposerCard({ draft, onDraftChange, onSubmit, workspace }) {
+export function ComposerCard({ draft, onDraftChange, onSubmit, workspace, themeMode }) {
+  const { t } = useTranslation();
+  const heroDescription = t(`workspace.${themeMode}.heroDescription`);
+
   return (
     <>
       <div className="composer-card">
         <textarea
           value={draft}
           onChange={(event) => onDraftChange(event.target.value)}
-          placeholder={workspace.heroDescription}
+          placeholder={heroDescription || t('composer.placeholder')}
         />
 
         <div className="composer-card__footer">
           <div className="composer-card__actions">
             <button className="composer-button composer-button--primary">
               <HiOutlineFolderPlus size={16} />
-              <span>Create project</span>
+              <span>{t('composer.createProject')}</span>
             </button>
-            <button className="composer-button" aria-label="Edit prompt">
+            <button className="composer-button" aria-label={t('composer.editPrompt')}>
               <HiOutlinePencilSquare size={16} />
             </button>
-            <button className="composer-button" aria-label="Add media">
+            <button className="composer-button" aria-label={t('composer.addMedia')}>
               <HiOutlinePhoto size={16} />
             </button>
           </div>
 
           <div className="composer-card__meta">
-            <span>SOLO Auto Model</span>
+            <span>{t('composer.model')}</span>
             <button className="composer-submit" onClick={onSubmit}>
               <HiOutlineArrowUp size={16} />
             </button>
@@ -47,17 +51,17 @@ export function ComposerCard({ draft, onDraftChange, onSubmit, workspace }) {
           <div className="composer-bottom-bar__group">
             <button className="composer-bottom-bar__item">
               <FaGithub size={14} />
-              <span>Select repo</span>
+              <span>{t('composer.selectRepo')}</span>
               <HiOutlineChevronDown size={12} />
             </button>
             <button className="composer-bottom-bar__item">
               <BiGitBranch size={14} />
-              <span>Select branch</span>
+              <span>{t('composer.selectBranch')}</span>
             </button>
           </div>
           <button className="composer-bottom-bar__item">
             <HiOutlineInbox size={14} />
-            <span>Default Env</span>
+            <span>{t('composer.defaultEnv')}</span>
             <HiOutlineChevronDown size={12} />
           </button>
         </div>

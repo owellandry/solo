@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   HiOutlineEyeSlash,
   HiOutlineXMark,
@@ -20,6 +21,7 @@ function getDisplayName(email) {
 }
 
 export function LoginModal({ open, onClose, onLoginSuccess }) {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -49,16 +51,16 @@ export function LoginModal({ open, onClose, onLoginSuccess }) {
           <HiOutlineXMark size={16} />
         </button>
 
-        <h2 id="login-title">Log in</h2>
+        <h2 id="login-title">{t('login.title')}</h2>
 
         <div className="social-stack">
           <button className="social-button social-button--dark" onClick={handleLogin}>
             <FaGithub size={18} />
-            <span>GitHub</span>
+            <span>{t('login.github')}</span>
           </button>
           <button className="social-button social-button--dark" onClick={handleLogin}>
             <FaGoogle size={18} />
-            <span>Google</span>
+            <span>{t('login.google')}</span>
           </button>
         </div>
 
@@ -68,7 +70,7 @@ export function LoginModal({ open, onClose, onLoginSuccess }) {
           <label className="input-shell">
             <input
               type="email"
-              placeholder="Email"
+              placeholder={t('login.emailPlaceholder')}
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
@@ -76,7 +78,7 @@ export function LoginModal({ open, onClose, onLoginSuccess }) {
           <label className="input-shell input-shell--with-icon">
             <input
               type="password"
-              placeholder="Password"
+              placeholder={t('login.passwordPlaceholder')}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
@@ -84,20 +86,20 @@ export function LoginModal({ open, onClose, onLoginSuccess }) {
           </label>
         </div>
 
-        <button className="text-link text-center">Forget password ?</button>
+        <button className="text-link text-center">{t('login.forgetPassword')}</button>
 
         <button className="login-submit" onClick={handleLogin}>
-          Log in
+          {t('login.submit')}
         </button>
 
         <p className="login-note text-center">
-          Don&apos;t have an account? <button className="text-link inline-link">Sign up</button>
+          {t('login.noAccount')} <button className="text-link inline-link">{t('login.signUp')}</button>
         </p>
 
         <div className="form-divider" />
 
         <p className="login-legal text-center">
-          by continuing, you are agreeing to TRAE&apos;s Terms of Service and Privacy Policy
+          {t('login.agreePrefix')}
         </p>
       </div>
     </div>

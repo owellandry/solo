@@ -1,6 +1,8 @@
 import { HiOutlineFolderPlus, HiOutlineSparkles } from 'react-icons/hi2'
+import { useTranslation } from 'react-i18next'
 
 export function SidebarNavigation({ activeView, onShowHome, onShowSkills }) {
+  const { t } = useTranslation();
   return (
     <nav className="sidebar__nav">
       <button
@@ -8,7 +10,7 @@ export function SidebarNavigation({ activeView, onShowHome, onShowSkills }) {
         onClick={onShowHome}
       >
         <HiOutlineFolderPlus size={16} />
-        <span>New task</span>
+        <span>{t('sidebar.nav.newTask')}</span>
       </button>
 
       <button
@@ -16,7 +18,7 @@ export function SidebarNavigation({ activeView, onShowHome, onShowSkills }) {
         onClick={onShowSkills}
       >
         <HiOutlineSparkles size={16} />
-        <span>Skills</span>
+        <span>{t('sidebar.nav.skills')}</span>
       </button>
     </nav>
   )

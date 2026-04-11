@@ -1,11 +1,14 @@
+import { useTranslation } from 'react-i18next'
+
 export function SidebarLoggedOutFooter({ onOpenLogin }) {
+  const { t } = useTranslation();
   return (
     <div className="sidebar__footer">
       <button className="sidebar__login" onClick={onOpenLogin}>
-        <span>Log in</span>
+        <span>{t('sidebar.footer.login')}</span>
         <span aria-hidden="true">→</span>
       </button>
-      <button className="sidebar__desktop">Get Desktop</button>
+      <button className="sidebar__desktop">{t('sidebar.footer.getDesktop')}</button>
     </div>
   )
 }

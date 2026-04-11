@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   HiOutlineArrowDownTray,
   HiOutlineArrowTopRightOnSquare,
@@ -8,7 +9,6 @@ import {
   HiOutlineXMark,
 } from 'react-icons/hi2'
 
-const accountSubmenu = ['Account', 'Plan & Billings', 'Usage']
 const languageOptions = ['Español', 'English', 'Português']
 const themeOptions = ['Dark', 'Light']
 
@@ -20,11 +20,18 @@ function UserSubmenu({
   onLanguageChange,
   onThemeChange,
 }) {
+  const { t } = useTranslation();
+  
   if (!panel) {
     return null
   }
 
   if (panel === 'account') {
+    const accountSubmenu = [
+      t('sidebar.submenu.account'),
+      t('sidebar.submenu.planBilling'),
+      t('sidebar.submenu.usage')
+    ]
     return (
       <div className="user-submenu" style={{ top }} role="menu">
         {accountSubmenu.map((option) => (
@@ -86,12 +93,14 @@ function UserMenu({
   onLogout,
   itemRefs,
 }) {
+  const { t } = useTranslation();
+
   const menuItems = [
-    { id: 'account', label: 'Manage Account', panel: 'account' },
-    { id: 'language', label: 'Language', value: language, panel: 'language' },
-    { id: 'theme', label: 'Theme', value: theme, panel: 'theme' },
-    { id: 'settings', label: 'Settings' },
-    { id: 'download', label: 'Download SOLO Desktop' },
+    { id: 'account', label: t('sidebar.menu.manageAccount'), panel: 'account' },
+    { id: 'language', label: t('sidebar.menu.language'), value: language, panel: 'language' },
+    { id: 'theme', label: t('sidebar.menu.theme'), value: theme, panel: 'theme' },
+    { id: 'settings', label: t('sidebar.menu.settings') },
+    { id: 'download', label: t('sidebar.menu.downloadDesktop') },
   ]
 
   return (
@@ -139,7 +148,7 @@ function UserMenu({
         <div className="user-menu__divider" />
 
         <button className="user-menu__logout" onClick={onLogout}>
-          Log Out
+          {t('sidebar.menu.logout')}
         </button>
       </div>
 
@@ -156,10 +165,31 @@ function UserMenu({
 }
 
 export function SidebarLoggedInFooter({ authUser, onLogout }) {
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activePanel, setActivePanel] = useState(null)
   const [panelTop, setPanelTop] = useState(52)
-  const [language, setLanguage] = useState('English')
+  
+  // Maps lang code to Label
+  const langMap = {
+    'es': 'Español',
+    'en': 'English',
+    'pt': 'Português'
+  };
+  
+  const [language, setLanguage] = useState(() => {
+    return langMap[i18n.language] || 'English'
+  })
+  
+  const handleLanguageChange = (newLangLabel) => {
+    setLanguage(newLangLabel)
+    let newCode = 'en';
+    if (newLangLabel === 'Español') newCode = 'es';
+    if (newLangLabel === 'Português') newCode = 'pt';
+    
+    i18n.changeLanguage(newCode);
+    localStorage.setItem('solo-lang', newCode);
+  }
   
   // Theme logic
   const [theme, setTheme] = useState(() => {
@@ -246,9 +276,9 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
           <span className="access-card__icon">
             <HiOutlineGift size={15} />
           </span>
-          <strong>Limited Free Access Is Active</strong>
+          <strong>{t('sidebar.footer.freeAccessTitle')}</strong>
         </div>
-        <p>AI requests are free for a limited time. Tell SOLO what you need.</p>
+        <p>{t('sidebar.footer.freeAccessDesc')}</p>
       </div>
 
       <div className="session-row-wrap" ref={menuRef}>
@@ -260,7 +290,7 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
             language={language}
             theme={theme}
             onSelectPanel={handleSelectPanel}
-            onLanguageChange={setLanguage}
+            onLanguageChange={handleLanguageChange}
             onThemeChange={setTheme}
             onLogout={handleLogout}
             itemRefs={itemRefs}
@@ -279,7 +309,7 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
 
           <button className="session-row__desktop">
             <HiOutlineArrowDownTray size={14} />
-            <span>Get Desktop</span>
+            <span>{t('sidebar.footer.getDesktop')}</span>
           </button>
         </div>
       </div>

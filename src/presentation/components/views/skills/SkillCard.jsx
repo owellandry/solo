@@ -1,7 +1,9 @@
 import { HiOutlinePlus } from 'react-icons/hi2'
 import { ProviderMark } from './ProviderMark'
+import { useTranslation } from 'react-i18next'
 
 export function SkillCard({ skill }) {
+  const { t } = useTranslation();
   return (
     <article className="skill-card">
       <div className="skill-card__brand">
@@ -11,7 +13,7 @@ export function SkillCard({ skill }) {
       <div className="skill-card__body">
         <h3>{skill.title}</h3>
         <p>{skill.description}</p>
-        <span>by {skill.provider}</span>
+        <span>{t('skills.byProvider', { provider: skill.provider })}</span>
       </div>
 
       <button className="skill-card__action">

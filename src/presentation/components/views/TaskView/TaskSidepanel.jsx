@@ -4,14 +4,16 @@ import {
   HiOutlineLink,
   HiOutlineListBullet,
 } from 'react-icons/hi2';
+import { useTranslation } from 'react-i18next';
 
 export function TaskSidepanel({ project }) {
+  const { t } = useTranslation();
   const completedTodos = project.todos.length;
 
   return (
     <aside className="task-sidepanel">
       <div className="task-sidepanel__section">
-        <div className="task-sidepanel__title">Todo</div>
+        <div className="task-sidepanel__title">{t('task.sidepanel.todo')}</div>
         <div className="todo-list">
           {project.todos.map((todo) => (
             <div className="todo-list__item" key={todo}>
@@ -20,11 +22,11 @@ export function TaskSidepanel({ project }) {
             </div>
           ))}
         </div>
-        <div className="task-sidepanel__count">{completedTodos} completed</div>
+        <div className="task-sidepanel__count">{t('task.sidepanel.completedCount', { count: completedTodos })}</div>
       </div>
 
       <div className="task-sidepanel__section">
-        <div className="task-sidepanel__title">Task Outputs</div>
+        <div className="task-sidepanel__title">{t('task.sidepanel.taskOutputs')}</div>
         <div className="output-list">
           {project.taskOutputs.map((item) => (
             <button key={item} className="output-list__item">
@@ -36,7 +38,7 @@ export function TaskSidepanel({ project }) {
       </div>
 
       <div className="task-sidepanel__section">
-        <div className="task-sidepanel__title">Context</div>
+        <div className="task-sidepanel__title">{t('task.sidepanel.context')}</div>
         <div className="context-meter">
           <div className="context-meter__bar">
             <span style={{ width: '51%' }} />
@@ -55,7 +57,7 @@ export function TaskSidepanel({ project }) {
       </div>
 
       <div className="task-sidepanel__section">
-        <div className="task-sidepanel__title">References</div>
+        <div className="task-sidepanel__title">{t('task.sidepanel.references')}</div>
         <div className="reference-list">
           {project.references.map((item) => (
             <button key={item} className="reference-list__item">
@@ -67,7 +69,7 @@ export function TaskSidepanel({ project }) {
       </div>
 
       <button className="task-sidepanel__compact">
-        <span>compact</span>
+        <span>{t('task.sidepanel.compact')}</span>
         <HiOutlineChevronDown size={14} />
       </button>
     </aside>

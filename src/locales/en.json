@@ -1,0 +1,120 @@
+{
+  "sidebar": {
+    "mode": {
+      "code": "Code",
+      "mtc": "MTC",
+      "switch": "Switch to {{mode}} mode"
+    },
+    "nav": {
+      "newTask": "New task",
+      "skills": "Skills"
+    },
+    "projects": {
+      "title": "Project list",
+      "emptyTitle": "No projects yet",
+      "emptyDesc": "Select a project to get started"
+    },
+    "footer": {
+      "freeAccessTitle": "Limited Free Access Is Active",
+      "freeAccessDesc": "AI requests are free for a limited time. Tell SOLO what you need.",
+      "getDesktop": "Get Desktop",
+      "login": "Log in"
+    },
+    "menu": {
+      "manageAccount": "Manage Account",
+      "language": "Language",
+      "theme": "Theme",
+      "settings": "Settings",
+      "downloadDesktop": "Download SOLO Desktop",
+      "logout": "Log Out"
+    },
+    "submenu": {
+      "account": "Account",
+      "planBilling": "Plan & Billings",
+      "usage": "Usage"
+    }
+  },
+  "home": {
+    "beta": "BETA"
+  },
+  "composer": {
+    "createProject": "Create project",
+    "editPrompt": "Edit prompt",
+    "addMedia": "Add media",
+    "model": "SOLO Auto Model",
+    "selectRepo": "Select repo",
+    "selectBranch": "Select branch",
+    "defaultEnv": "Default Env",
+    "placeholder": "Help you organize literature reviews, create PPTs, analyze Excel data and other daily work, output professional deliverables."
+  },
+  "skills": {
+    "upload": "Upload Skill",
+    "title": "Skills",
+    "desc": "Install and manage skills to unlock new capabilities for SOLO.",
+    "search": "Search",
+    "marketplace": "Marketplace",
+    "developerTools": "Developer Tools",
+    "byProvider": "by {{provider}}"
+  },
+  "task": {
+    "imagesAttached": "Images attached {{count}}",
+    "soloCode": "SOLO Code",
+    "thought": "Thought",
+    "commandExecuted": "Command executed",
+    "previewWebPage": "Preview web page",
+    "artifacts": "Artifacts",
+    "completed": "Completed",
+    "workedFor": "Worked for {{time}}",
+    "sidepanel": {
+      "todo": "Todo",
+      "completedCount": "{{count}} completed",
+      "taskOutputs": "Task Outputs",
+      "context": "Context",
+      "references": "References",
+      "compact": "compact"
+    }
+  },
+  "login": {
+    "title": "Log in",
+    "github": "GitHub",
+    "google": "Google",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "forgetPassword": "Forget password ?",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "agreePrefix": "by continuing, you are agreeing to TRAE's Terms of Service and Privacy Policy",
+    "submit": "Log in"
+  },
+  "cookies": {
+    "title": "Cookie Notice",
+    "notice": "TRAE uses cookies and similar technologies to provide, secure, analyse, improve and market our services. Learn more in our Cookies Policy.",
+    "accept": "Got it"
+  },
+  "workspace": {
+    "office": {
+      "heroTitle": "More Than Coding",
+      "heroSubtitle": "Let SOLO handle all your office tasks",
+      "heroDescription": "Help you organize literature reviews, create PPTs, analyze Excel data and other daily work, output professional deliverables.",
+      "cards": {
+        "reading": { "title": "Web Reading", "desc": "Read online papers to produce literature reviews." },
+        "research": { "title": "Research and Analysis", "desc": "Research video platforms and generate presentation." },
+        "mining": { "title": "Data Mining", "desc": "Mine AI market data and analyze data trends." },
+        "content": { "title": "Content creation", "desc": "Generate promotional posts with materials." }
+      }
+    },
+    "code": {
+      "heroTitle": "Code with SOLO",
+      "heroSubtitle": "Let SOLO handle all your development tasks",
+      "heroDescription": "Help you write code, debug, optimize performance and other development work, deliver production-ready code.",
+      "cards": {
+        "app-dev": { "title": "Application Development", "desc": "Implement a multi-language learning platform." },
+        "understanding": { "title": "Project Understanding", "desc": "Analyze project repository and generate code wiki." },
+        "game": { "title": "Game Creativity", "desc": "Create a pixel art mecha battle game." },
+        "automation": { "title": "Automation Tools", "desc": "Write an automation tool to collect data." }
+      }
+    }
+  }
+}

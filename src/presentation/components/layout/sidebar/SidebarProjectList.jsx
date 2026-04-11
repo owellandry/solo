@@ -1,10 +1,12 @@
 import { HiOutlineFolderOpen, HiOutlineChatBubbleOvalLeftEllipsis } from 'react-icons/hi2'
+import { useTranslation } from 'react-i18next'
 
 export function SidebarProjectList({ activeView, projects, selectedProjectId, onOpenProject }) {
+  const { t } = useTranslation();
   return (
     <div className="sidebar__section">
       <div className="sidebar__section-header">
-        <span>Project list</span>
+        <span>{t('sidebar.projects.title')}</span>
         <button className="sidebar__ghost">
           <HiOutlineFolderOpen size={14} />
         </button>
@@ -30,8 +32,8 @@ export function SidebarProjectList({ activeView, projects, selectedProjectId, on
           <div className="sidebar__empty-icon">
             <HiOutlineChatBubbleOvalLeftEllipsis size={18} />
           </div>
-          <strong>No projects yet</strong>
-          <p>Select a project to get started</p>
+          <strong>{t('sidebar.projects.emptyTitle')}</strong>
+          <p>{t('sidebar.projects.emptyDesc')}</p>
         </div>
       )}
     </div>

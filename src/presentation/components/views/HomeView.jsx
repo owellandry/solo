@@ -1,6 +1,7 @@
 import { SidebarTop } from '../layout/sidebar/SidebarTop'
 import { FeatureCard } from './home/FeatureCard'
 import { ComposerCard } from './home/ComposerCard'
+import { useTranslation } from 'react-i18next'
 
 export function HomeView({
   workspace,
@@ -12,7 +13,11 @@ export function HomeView({
   isCollapsed,
   onToggleCollapse,
 }) {
-  const titleParts = workspace.heroTitle.split(' ')
+  const { t } = useTranslation();
+  const themeMode = workspace.brand === 'MTC' ? 'office' : 'code';
+  const heroTitle = t(`workspace.${themeMode}.heroTitle`);
+  const heroSubtitle = t(`workspace.${themeMode}.heroSubtitle`);
+  const titleParts = heroTitle.split(' ')
 
   return (
     <section className="main-panel">
@@ -27,7 +32,7 @@ export function HomeView({
             />
           )}
         </div>
-        <button className="topbar__action">Get Desktop</button>
+        <button className="topbar__action">{t('sidebar.footer.getDesktop')}</button>
       </header>
 
       <div className="hero-layout">
@@ -37,14 +42,14 @@ export function HomeView({
               {titleParts.slice(0, 1).join(' ')}
             </span>{' '}
             {titleParts.slice(1).join(' ')}
-            <span className="beta-badge">BETA</span>
+            <span className="beta-badge">{t('home.beta')}</span>
           </h1>
-          <p>{workspace.heroSubtitle}</p>
+          <p>{heroSubtitle}</p>
         </div>
 
         <div className="feature-grid">
           {workspace.cards.map((item) => (
-            <FeatureCard key={item.id} item={item} />
+            <FeatureCard key={item.id} item={item} themeMode={themeMode} />
           ))}
         </div>
 
@@ -53,6 +58,7 @@ export function HomeView({
           onDraftChange={onDraftChange}
           onSubmit={onSubmit}
           workspace={workspace}
+          themeMode={themeMode}
         />
       </div>
     </section>

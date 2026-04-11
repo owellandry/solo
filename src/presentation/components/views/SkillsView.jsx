@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { HiOutlineMagnifyingGlass, HiOutlinePlus } from 'react-icons/hi2'
+import { useTranslation } from 'react-i18next'
 
 import { useSkills } from './useSkills'
 import { SidebarTop } from '../layout/sidebar/SidebarTop'
 import { SkillCard } from './skills/SkillCard'
 
 export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }) {
+  const { t } = useTranslation();
   const { skills, categories } = useSkills()
   const [activeCategory, setActiveCategory] = useState('All')
   const [search, setSearch] = useState('')
@@ -38,15 +40,15 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
         </div>
         <button className="topbar__action topbar__action--dark">
           <HiOutlinePlus size={14} />
-          <span>Upload Skill</span>
+          <span>{t('skills.upload')}</span>
         </button>
       </header>
 
       <div className="skills-page">
         <div className="skills-page__heading">
           <div>
-            <h2>Skills</h2>
-            <p>Install and manage skills to unlock new capabilities for SOLO.</p>
+            <h2>{t('skills.title')}</h2>
+            <p>{t('skills.desc')}</p>
           </div>
 
           <label className="searchbox">
@@ -55,13 +57,13 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
               type="search"
               value={search}
               onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search"
+              placeholder={t('skills.search')}
             />
           </label>
         </div>
 
         <div className="market-tabs">
-          <button className="market-tabs__trigger is-active">Marketplace</button>
+          <button className="market-tabs__trigger is-active">{t('skills.marketplace')}</button>
         </div>
 
         <div className="pill-row">
@@ -76,7 +78,7 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
           ))}
         </div>
 
-        <div className="skills-section-title">Developer Tools</div>
+        <div className="skills-section-title">{t('skills.developerTools')}</div>
 
         <div className="skills-grid">
           {filteredSkills.map((skill) => (

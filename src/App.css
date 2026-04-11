@@ -212,7 +212,7 @@
 
 .sidebar__nav {
   display: grid;
-  gap: 2px;
+  gap: 6px;
   margin-top: 12px;
 }
 
@@ -770,21 +770,16 @@
 .composer-card textarea,
 .task-composer textarea {
   width: 100%;
-  min-height: 138px;
+  min-height: 80px;
   border: 0;
   resize: none;
-  padding: 16px;
+  padding: 12px 16px;
   box-sizing: border-box;
   border-radius: 8px 8px 0 0;
   outline: none;
   font: inherit;
   color: var(--heading);
   background: transparent;
-}
-
-.task-composer textarea {
-  min-height: 80px; /* Thinner height specifically for the chat composer */
-  padding: 12px 16px;
 }
 
 .composer-card__footer,
@@ -1512,6 +1507,25 @@
 @media (max-width: 1180px) {
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .feature-card {
+    min-height: auto;
+    padding: 14px 12px 12px;
+  }
+  
+  .feature-card__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 16px;
+  }
+  
+  .feature-card h3 {
+    font-size: 13px;
+  }
+  
+  .feature-card p {
+    font-size: 12px;
   }
 
   .skills-grid {

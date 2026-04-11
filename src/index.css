@@ -6,6 +6,9 @@
   --heading: #111827;
   --muted: #7a8396;
   --accent: #6c63ff;
+  --surface-hover: #f4f7fb;
+  --btn-dark-bg: #34383e;
+  --bubble-bg: #e6defd;
   font-family:
     Inter,
     ui-sans-serif,

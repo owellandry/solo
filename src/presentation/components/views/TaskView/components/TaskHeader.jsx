@@ -13,8 +13,9 @@ export function TaskHeader({ project, mode, onToggleMode, isCollapsed, onToggleC
             isCollapsed={isCollapsed}
           />
         )}
-        <div>
+        <div className="task-header__info">
           <h2>{project.title}</h2>
+          <span className="task-header__separator">·</span>
           <p>
             {project.repository} · {project.branch} · {project.updatedAt}
           </p>

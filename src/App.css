@@ -1495,3 +1495,63 @@ body.ui-transitioning #root {
   opacity: 0.3;
   filter: blur(2px);
 }
+
+/* Responsive improvements for Task View */
+.task-header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.task-header__separator {
+  display: none;
+  color: var(--muted);
+  margin: 0 6px;
+}
+
+@media (max-width: 1024px) {
+  /* Hide the right sidepanel on smaller screens completely */
+  .task-sidepanel {
+    display: none !important;
+  }
+  
+  /* Make the header title and meta inline */
+  .task-header__info {
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .task-header__info h2 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .task-header__separator {
+    display: inline-block;
+  }
+  
+  .task-header__info p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+  
+  /* Make the main layout single column */
+  .task-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Even smaller screens */
+  .task-header__info h2 {
+    display: none; /* Hide title completely as requested: "solo el texto esta super, pero arriba el titulo no es necesario" */
+  }
+  
+  .task-header__separator {
+    display: none;
+  }
+}

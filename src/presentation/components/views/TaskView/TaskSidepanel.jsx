@@ -38,7 +38,7 @@ function buildContextItems(project, activeTab) {
   return project.taskOutputs.map((item) => ({ key: item, label: item, type: 'other' }));
 }
 
-export function TaskSidepanel({ project, mode }) {
+export function TaskSidepanel({ project, mode, floating = false }) {
   const { t } = useTranslation();
   const tabs = useMemo(
     () => project.contextBreakdown.filter(([, value]) => value > 0),
@@ -54,7 +54,12 @@ export function TaskSidepanel({ project, mode }) {
   const contextItems = useMemo(() => buildContextItems(project, activeTab), [project, activeTab]);
 
   return (
-    <div className={`context-status_sidebar context-status_sidebar--${mode}`} style={{ width: 320 }}>
+    <div
+      className={`context-status_sidebar context-status_sidebar--${mode} ${
+        floating ? 'context-status_sidebar--floating' : ''
+      }`}
+      style={{ width: 320 }}
+    >
       <div className="context-status_section context-status_section--progress">
         <div className="context-status_section-header">
           <span className="context-status_section-title">{t('task.sidepanel.todo')}</span>

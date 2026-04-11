@@ -10,6 +10,10 @@ export function TaskHeader({
   onToggleCollapse,
   onToggleSidepanel,
   isSidepanelOpen,
+  sidepanelTriggerRef,
+  onSidepanelTriggerMouseEnter,
+  onSidepanelTriggerMouseLeave,
+  onSidepanelTriggerFocus,
 }) {
   return (
     <header className="task-header">
@@ -40,8 +44,12 @@ export function TaskHeader({
       </div>
       <div className="task-header__right">
         <button
+          ref={sidepanelTriggerRef}
           className="task-header__action"
           onClick={onToggleSidepanel}
+          onMouseEnter={onSidepanelTriggerMouseEnter}
+          onMouseLeave={onSidepanelTriggerMouseLeave}
+          onFocus={onSidepanelTriggerFocus}
           aria-label="Toggle sidepanel"
           aria-expanded={isSidepanelOpen}
         >

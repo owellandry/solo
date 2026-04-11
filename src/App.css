@@ -1335,8 +1335,41 @@
   overflow: hidden;
 }
 
-.task-sidepanel-backdrop {
+.task-sidepanel-popover {
   display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 70;
+}
+
+.portal-Infc1v {
+  position: fixed;
+}
+
+.visible-I7uW2G {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.container-ihs1TM.floating-lMYO0R,
+.container-ihs1TM.hidden-mFdUEm {
+  border-left: none;
+}
+
+.context-status_sidebar--floating {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow:
+    0 0 0.5px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06),
+    0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  max-height: min(680px, 85vh);
+  min-height: min(680px, 85vh);
+  max-width: 57vw;
+  overflow: auto;
+  width: 320px;
 }
 
 .task-sidepanel {
@@ -2075,44 +2108,22 @@ body.ui-transitioning #root {
     grid-template-columns: 1fr !important;
   }
 
-  .task-sidepanel-container--mobile {
-    position: absolute;
-    top: 46px;
-    right: 0;
-    bottom: 0;
-    width: min(320px, calc(100vw - 32px));
-    border-left: 1px solid var(--line);
-    background: var(--panel);
-    transform: translateX(100%);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 45;
-    transition:
-      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-      opacity 0.2s ease;
-  }
-
-  .task-sidepanel-container--mobile.is-open {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .task-sidepanel-container--mobile .context-status_sidebar {
-    width: 100% !important;
-  }
-
-  .task-sidepanel-backdrop {
-    position: absolute;
-    top: 46px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border: 0;
-    background: rgba(15, 23, 42, 0.16);
+  .task-sidepanel-popover {
     display: block;
-    cursor: pointer;
-    z-index: 44;
+  }
+
+  .task-sidepanel-popover .task-sidepanel-container {
+    border-left: none;
+    grid-column: auto;
+    grid-row: auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    width: 320px;
+  }
+
+  .task-sidepanel-popover .context-status_sidebar {
+    width: 320px !important;
   }
 }
 

@@ -990,13 +990,18 @@
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 16px);
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .task-header {
-  min-height: 42px;
-  padding: 10px 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
   border-bottom: 1px solid var(--line);
+  margin: 0 -14px;
   flex-shrink: 0;
 }
 
@@ -1149,6 +1154,7 @@
 .task-composer {
   margin: 0 12px;
   flex-shrink: 0;
+  margin-top: auto;
 }
 
 .task-sidepanel {

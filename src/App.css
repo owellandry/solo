@@ -1298,23 +1298,15 @@
   width: 100%;
   margin: 0 auto;
   /* Cambiado: scrollbar estilizado pero muy disimulado */
-  scrollbar-width: thin;
-  scrollbar-color: rgba(121, 129, 146, 0.2) transparent;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.conversation::-webkit-scrollbar {
-  width: 4px;
-  background: transparent;
-}
+.conversation::-webkit-scrollbar { display: none; }
 
-.conversation::-webkit-scrollbar-thumb {
-  background: rgba(121, 129, 146, 0.2);
-  border-radius: 4px;
-}
 
-.conversation::-webkit-scrollbar-thumb:hover {
-  background: rgba(121, 129, 146, 0.4);
-}
+
+
 
 .message--user {
   align-self: flex-end;
@@ -2378,3 +2370,4 @@ body.ui-transitioning #root {
 .task-layout--sidepanel-collapsed {
   grid-template-columns: 1fr;
 }
+

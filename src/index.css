@@ -40,38 +40,15 @@ button, input, textarea, .sans-font {
   box-sizing: border-box;
 }
 
-/* Global UX guards: hide scrollbars, prevent accidental text selection and image dragging */
-* {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-*::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;
-}
-
 html,
 body,
 #root {
   height: 100%;
 }
 
-img,
-svg,
-img *,
-svg * {
-  -webkit-user-drag: none;
-  user-drag: none;
-}
-
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--heading);
   transition: background-color 0.4s ease, color 0.4s ease;
   overflow: hidden;
 }
@@ -81,27 +58,6 @@ input,
 textarea {
   font: inherit;
   font-family: var(--font-poppins);
-  color: inherit;
-}
-
-input,
-textarea,
-[contenteditable='true'],
-[contenteditable='plaintext-only'],
-.message__bubble,
-.assistant-response,
-.response-block,
-.hero-copy h1,
-.hero-copy p {
-  -webkit-user-select: text;
-  user-select: text;
-}
-
-pre,
-code,
-kbd,
-samp {
-  color: inherit;
 }
 
 button:focus-visible,

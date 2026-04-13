@@ -90,4 +90,15 @@ body.dark-theme {
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
 }
 
+/* Scrollbar */
+.dark-theme ::-webkit-scrollbar-track {
+  background: var(--bg);
+}
 
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--line);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -2,107 +2,199 @@ import { useEffect, useRef } from 'react';
 
 export function BackgroundArt() {
   const containerRef = useRef(null);
-  const p5Instance = useRef(null);
+  const p5InstanceRef = useRef(null);
 
   useEffect(() => {
-    let p5;
-    
+    let cancelled = false;
+
     const initP5 = async () => {
-      if (p5Instance.current) return;
-      
+      if (p5InstanceRef.current || !containerRef.current) return;
+
       const p5Module = await import('p5');
-      p5 = p5Module.default;
-      
+      if (cancelled || !containerRef.current) return;
+
+      const p5 = p5Module.default;
+      p5.disableFriendlyErrors = true;
+      if (!window.p5) {
+        window.p5 = p5;
+      }
+
       const sketch = (p) => {
         let particles = [];
-        const numParticles = 100;
-        const seed = 12345;
-        
+        const numParticles = 800;
+        const noiseScale = 0.003;
+        const zOffsetSpeed = 0.0005;
+        let zOffset = 0;
+        let colors = [];
+
+        class Particle {
+          constructor() {
+            this.pos = p.createVector(p.random(p.width), p.random(p.height));
+            this.vel = p.createVector(0, 0);
+            this.acc = p.createVector(0, 0);
+            this.maxSpeed = p.random(0.5, 1.5);
+
+            const r = p.random(1);
+            if (r < 0.1) this.color = colors[0];
+            else if (r < 0.2) this.color = colors[1];
+            else if (r < 0.3) this.color = colors[2];
+            else if (r < 0.8) this.color = colors[3];
+            else this.color = colors[4];
+
+            this.size = p.random(0.5, 2.5);
+            this.maxLife = p.random(150, 400);
+            this.life = p.random(0, this.maxLife);
+            this.weight = p.random(0.1, 0.5);
+          }
+
+          update() {
+            this.vel.add(this.acc);
+            this.vel.limit(this.maxSpeed);
+            this.pos.add(this.vel);
+            this.acc.mult(0);
+
+            this.life += 1;
+            if (this.life > this.maxLife || this.isOffScreen()) {
+              this.reset();
+            }
+          }
+
+          applyForce(force) {
+            this.acc.add(p.createVector(force.x * this.weight, force.y * this.weight));
+          }
+
+          display() {
+            let alpha = 255;
+            const fadeTime = 50;
+
+            if (this.life < fadeTime) {
+              alpha = p.map(this.life, 0, fadeTime, 0, 200);
+            } else if (this.life > this.maxLife - fadeTime) {
+              alpha = p.map(this.life, this.maxLife - fadeTime, this.maxLife, 200, 0);
+            } else {
+              alpha = 200;
+            }
+
+            p.noStroke();
+            const c = p.color(p.red(this.color), p.green(this.color), p.blue(this.color), alpha);
+            p.fill(c);
+            p.ellipse(this.pos.x, this.pos.y, this.size);
+          }
+
+          isOffScreen() {
+            return (
+              this.pos.x < 0 ||
+              this.pos.x > p.width ||
+              this.pos.y < 0 ||
+              this.pos.y > p.height
+            );
+          }
+
+          reset() {
+            this.pos = p.createVector(p.random(p.width), p.random(p.height));
+            this.vel.mult(0);
+            this.life = 0;
+          }
+        }
+
         p.setup = () => {
-          p.createCanvas(window.innerWidth, window.innerHeight);
-          p.randomSeed(seed);
-          p.noiseSeed(seed);
-          
-          for(let i = 0; i < numParticles; i++) {
-            particles.push({
-              pos: p.createVector(p.random(p.width), p.random(p.height)),
-              vel: p.createVector(p.random(-1, 1), p.random(-1, 1)),
-              size: p.random(1.5, 3),
-              color: p.random() > 0.5 
-                ? p.color(217, 119, 87, 140)  // Anthropic Orange
-                : p.color(106, 155, 204, 140) // Anthropic Blue
-            });
+          const container = containerRef.current;
+          if (!container) return;
+
+          p.createCanvas(container.offsetWidth, container.offsetHeight);
+          p.background('#141413');
+
+          colors = [
+            p.color('#d97757'),
+            p.color('#6a9bcc'),
+            p.color('#788c5d'),
+            p.color('#b0aea5'),
+            p.color('#faf9f5')
+          ];
+
+          particles = [];
+          for (let i = 0; i < numParticles; i += 1) {
+            particles.push(new Particle());
           }
         };
 
         p.draw = () => {
-          p.clear();
-          
-          for(let i = 0; i < particles.length; i++) {
-            let prt = particles[i];
-            
-            // Organic turbulence flow field
-            let angle = p.noise(prt.pos.x * 0.002, prt.pos.y * 0.002, p.frameCount * 0.001) * p.TWO_PI * 4;
-            prt.vel.x += p.cos(angle) * 0.04;
-            prt.vel.y += p.sin(angle) * 0.04;
-            prt.vel.limit(1.2);
-            
-            prt.pos.add(prt.vel);
-            
-            if(prt.pos.x < 0) prt.pos.x = p.width;
-            if(prt.pos.x > p.width) prt.pos.x = 0;
-            if(prt.pos.y < 0) prt.pos.y = p.height;
-            if(prt.pos.y > p.height) prt.pos.y = 0;
-            
-            for(let j = i + 1; j < particles.length; j++) {
-              let other = particles[j];
-              let d = p.dist(prt.pos.x, prt.pos.y, other.pos.x, other.pos.y);
-              if(d < 150) {
-                p.stroke(255, 255, 255, p.map(d, 0, 150, 40, 0));
-                p.strokeWeight(0.6);
-                p.line(prt.pos.x, prt.pos.y, other.pos.x, other.pos.y);
-              }
-            }
-            
-            p.noStroke();
-            p.fill(prt.color);
-            p.ellipse(prt.pos.x, prt.pos.y, prt.size);
+          p.background(20, 20, 19, 10);
+
+          for (let i = 0; i < particles.length; i += 1) {
+            const particle = particles[i];
+            const angle = p.noise(
+              particle.pos.x * noiseScale,
+              particle.pos.y * noiseScale,
+              zOffset
+            ) * p.TWO_PI * 4;
+            const force = p5.Vector.fromAngle(angle);
+            force.setMag(0.15);
+            particle.applyForce(force);
+            particle.update();
+            particle.display();
           }
+
+          zOffset += zOffsetSpeed;
         };
 
         p.windowResized = () => {
-          p.resizeCanvas(window.innerWidth, window.innerHeight);
+          const container = containerRef.current;
+          if (!container) return;
+          p.resizeCanvas(container.offsetWidth, container.offsetHeight);
+          p.background('#141413');
         };
       };
 
-      if (containerRef.current && !p5Instance.current) {
-        p5Instance.current = new p5(sketch, containerRef.current);
+      if (containerRef.current && !p5InstanceRef.current) {
+        p5InstanceRef.current = new p5(sketch, containerRef.current);
       }
     };
 
     initP5();
 
     return () => {
-      if (p5Instance.current) {
-        p5Instance.current.remove();
-        p5Instance.current = null;
+      cancelled = true;
+      if (p5InstanceRef.current) {
+        p5InstanceRef.current.remove();
+        p5InstanceRef.current = null;
       }
     };
   }, []);
 
   return (
-    <div 
-      ref={containerRef} 
+    <div
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
+        right: 0,
+        bottom: 0,
         zIndex: 0,
         pointerEvents: 'none',
-        opacity: 0.6
+        overflow: 'hidden'
       }}
-    />
+    >
+      <div
+        ref={containerRef}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(to bottom, rgba(20,20,19,0.4), rgba(20,20,19,0) 45%, rgba(20,20,19,1))'
+        }}
+      />
+    </div>
   );
 }

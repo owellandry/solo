@@ -12,8 +12,7 @@
 
 .app-shell.has-modal .workspace,
 .app-shell.has-modal .top-navbar {
-  filter: blur(8px);
-  transform: scale(0.996);
+  opacity: 0.25;
 }
 
 .app-shell.is-sidebar-collapsed {
@@ -33,8 +32,6 @@
   top: 0;
   z-index: 12;
   box-sizing: border-box;
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
 }
 
@@ -359,8 +356,6 @@
   padding: 12px 12px 10px;
   box-shadow: 0 8px 18px rgba(20, 20, 19, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
 }
 
 .access-card:hover {
@@ -511,8 +506,6 @@
   background: var(--panel);
   color: var(--heading);
   box-shadow: 0 14px 28px rgba(20, 20, 19, 0.12);
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
 }
 
 .user-menu {
@@ -816,8 +809,6 @@
   border-radius: 16px;
   padding: 24px;
   background: var(--panel-soft);
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease;
 }
 
@@ -877,8 +868,6 @@
   border-radius: 24px;
   background: var(--panel-soft);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -1105,8 +1094,6 @@
   border-radius: 20px;
   padding: 16px 16px 16px 20px;
   background: var(--panel);
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   display: grid;
   grid-template-columns: 46px 1fr auto;
   gap: 16px;
@@ -1165,8 +1152,6 @@
 .task-main {
   background: var(--panel-soft);
   border-right: 1px solid var(--line);
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   padding: 0 14px 24px;
   display: flex;
   flex-direction: column;
@@ -1180,8 +1165,6 @@
 
 .task-header {
   background: var(--panel-soft);
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   align-items: center;
   align-self: stretch;
   border-bottom: 1px solid var(--line);
@@ -1458,8 +1441,6 @@
 
 .task-sidepanel-container {
   background: var(--panel-soft);
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   grid-column: 2;
   grid-row: 2;
   height: 100%;
@@ -1953,7 +1934,6 @@
   position: fixed;
   inset: 0;
   background: rgba(250, 249, 245, 0.76);
-  backdrop-filter: blur(10px);
   display: grid;
   place-items: center;
   z-index: 20;
@@ -1969,8 +1949,6 @@
   box-shadow: 0 28px 60px rgba(20, 20, 19, 0.16);
   position: relative;
   animation: slide-up-modal 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
 }
 
 .login-modal__close {
@@ -2095,8 +2073,6 @@
   box-shadow: 0 20px 44px rgba(20, 20, 19, 0.12);
   z-index: 15;
   animation: slide-up-cookie 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
 }
 
 .cookie-notice h3 {
@@ -2284,12 +2260,11 @@
 
 /* Global UI Transitions for Theme and Language changes */
 #root {
-  transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 body.ui-transitioning #root {
   opacity: 0.3;
-  filter: blur(2px);
 }
 
 @media (max-width: 1024px) {
@@ -2377,4 +2352,3 @@ body.ui-transitioning #root {
 .task-layout--sidepanel-collapsed {
   grid-template-columns: 1fr;
 }
-

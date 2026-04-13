@@ -21,10 +21,6 @@ export function SidebarTop({ mode, onToggleMode, onToggleCollapse, isCollapsed }
           </span>
         </span>
       </button>
-
-      <button className="sidebar__ghost" onClick={onToggleCollapse}>
-        <HiOutlineViewColumns size={14} />
-      </button>
     </div>
   )
 }

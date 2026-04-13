@@ -308,19 +308,6 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
 
   return (
     <div className="sidebar__footer sidebar__footer--logged">
-      <div className="access-card">
-        <button className="access-card__close" aria-label="Dismiss access card">
-          <HiOutlineXMark size={14} />
-        </button>
-        <div className="access-card__title-row">
-          <span className="access-card__icon">
-            <HiOutlineGift size={15} />
-          </span>
-          <strong>{t('sidebar.footer.freeAccessTitle')}</strong>
-        </div>
-        <p>{t('sidebar.footer.freeAccessDesc')}</p>
-      </div>
-
       <div className="session-row-wrap" ref={menuRef}>
         {isMenuOpen && (
           <UserMenu
@@ -345,11 +332,6 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
             <span className="session-row__avatar">{authUser.initials}</span>
             <span className="session-row__name">{authUser.name}</span>
             <span className="session-row__plan">{authUser.plan}</span>
-          </button>
-
-          <button className="session-row__desktop">
-            <HiOutlineArrowDownTray size={14} />
-            <span>{t('sidebar.footer.getDesktop')}</span>
           </button>
         </div>
       </div>

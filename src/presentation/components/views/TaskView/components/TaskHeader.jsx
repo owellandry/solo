@@ -1,6 +1,5 @@
 import { HiOutlineBars3 } from 'react-icons/hi2';
 import { FaGithub } from 'react-icons/fa6';
-import { SidebarTop } from '../../../layout/sidebar/SidebarTop';
 
 export function TaskHeader({
   project,
@@ -18,14 +17,6 @@ export function TaskHeader({
   return (
     <header className="task-header">
       <div className="task-header__left">
-        {isCollapsed && (
-          <SidebarTop
-            mode={mode}
-            onToggleMode={onToggleMode}
-            onToggleCollapse={onToggleCollapse}
-            isCollapsed={isCollapsed}
-          />
-        )}
         <div className="task-header__center">
           <div className="task-header__title-row">
             <h2>{project.title}</h2>

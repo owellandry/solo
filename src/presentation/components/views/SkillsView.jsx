@@ -3,7 +3,6 @@ import { HiOutlineMagnifyingGlass, HiOutlinePlus } from 'react-icons/hi2'
 import { useTranslation } from 'react-i18next'
 
 import { useSkills } from './useSkills'
-import { SidebarTop } from '../layout/sidebar/SidebarTop'
 import { SkillCard } from './skills/SkillCard'
 
 export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }) {
@@ -27,17 +26,7 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
 
   return (
     <section className="main-panel">
-      <header className="topbar">
-        <div>
-          {isCollapsed && (
-            <SidebarTop
-              mode={mode}
-              onToggleMode={onToggleMode}
-              onToggleCollapse={onToggleCollapse}
-              isCollapsed={isCollapsed}
-            />
-          )}
-        </div>
+      <header className="topbar" style={{ justifyContent: 'flex-end' }}>
         <button className="topbar__action topbar__action--dark">
           <HiOutlinePlus size={14} />
           <span>{t('skills.upload')}</span>

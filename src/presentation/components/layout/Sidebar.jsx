@@ -20,34 +20,39 @@ export function Sidebar({
   selectedProjectId,
 }) {
   return (
-    <aside className={`sidebar ${isCollapsed ? 'is-collapsed' : ''}`}>
-      <div className="sidebar__content">
-        <SidebarTop
-          mode={mode}
-          onToggleMode={onToggleMode}
-          onToggleCollapse={onToggleCollapse}
-          isCollapsed={isCollapsed}
-        />
+    <header className="top-navbar">
+      <div className="top-navbar__content">
+        <div className="top-navbar__left">
+          <SidebarTop
+            mode={mode}
+            onToggleMode={onToggleMode}
+            onToggleCollapse={onToggleCollapse}
+            isCollapsed={false}
+          />
+        </div>
 
-        <SidebarNavigation
-          activeView={activeView}
-          onShowHome={onShowHome}
-          onShowSkills={onShowSkills}
-        />
+        <div className="top-navbar__center">
+          <SidebarNavigation
+            activeView={activeView}
+            onShowHome={onShowHome}
+            onShowSkills={onShowSkills}
+          />
+        </div>
 
-        <SidebarProjectList
-          activeView={activeView}
-          projects={projects}
-          selectedProjectId={selectedProjectId}
-          onOpenProject={onOpenProject}
-        />
-
-        {authUser ? (
-          <SidebarLoggedInFooter authUser={authUser} onLogout={onLogout} />
-        ) : (
-          <SidebarLoggedOutFooter onOpenLogin={onOpenLogin} />
-        )}
+        <div className="top-navbar__right">
+          {/* <SidebarProjectList
+            activeView={activeView}
+            projects={projects}
+            selectedProjectId={selectedProjectId}
+            onOpenProject={onOpenProject}
+          /> */}
+          {authUser ? (
+            <SidebarLoggedInFooter authUser={authUser} onLogout={onLogout} />
+          ) : (
+            <SidebarLoggedOutFooter onOpenLogin={onOpenLogin} />
+          )}
+        </div>
       </div>
-    </aside>
+    </header>
   )
 }

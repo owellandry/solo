@@ -41,13 +41,14 @@ button, input, textarea, .sans-font {
 html,
 body,
 #root {
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
   margin: 0;
   background: var(--bg);
   transition: background-color 0.4s ease, color 0.4s ease;
+  overflow: hidden;
 }
 
 button,

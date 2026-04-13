@@ -6,6 +6,7 @@ import { HomeView } from './presentation/components/views/HomeView';
 import { SkillsView } from './presentation/components/views/SkillsView';
 import { TaskView } from './presentation/components/views/TaskView';
 import { useAppLogic } from './presentation/hooks/useAppLogic';
+import { BackgroundArt } from './presentation/components/common/BackgroundArt';
 
 function App() {
   const { state, actions } = useAppLogic();
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <>
+      <BackgroundArt />
       <div className={`app-shell ${state.loginOpen ? 'has-modal' : ''} ${state.isSidebarCollapsed ? 'is-sidebar-collapsed' : ''}`}>
         <Sidebar
           activeView={state.activeView}

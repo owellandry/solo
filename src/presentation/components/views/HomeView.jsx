@@ -1,4 +1,3 @@
-import { SidebarTop } from '../layout/sidebar/SidebarTop'
 import { FeatureCard } from './home/FeatureCard'
 import { ComposerCard } from './home/ComposerCard'
 import { useTranslation } from 'react-i18next'
@@ -21,20 +20,6 @@ export function HomeView({
 
   return (
     <section className="main-panel main-panel--home">
-      <header className="topbar">
-        <div>
-          {isCollapsed && (
-            <SidebarTop
-              mode={mode}
-              onToggleMode={onToggleMode}
-              onToggleCollapse={onToggleCollapse}
-              isCollapsed={isCollapsed}
-            />
-          )}
-        </div>
-        <button className="topbar__action">{t('sidebar.footer.getDesktop')}</button>
-      </header>
-
       <div className="workspace-home">
         <div className="welcome-title-wrapper">
           <div className="welcome-title">

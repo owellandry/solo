@@ -1297,23 +1297,14 @@
   max-width: 680px;
   width: 100%;
   margin: 0 auto;
-  /* Cambiado: scrollbar estilizado pero muy disimulado */
-  scrollbar-width: thin;
-  scrollbar-color: rgba(121, 129, 146, 0.2) transparent;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .conversation::-webkit-scrollbar {
-  width: 4px;
-  background: transparent;
-}
-
-.conversation::-webkit-scrollbar-thumb {
-  background: rgba(121, 129, 146, 0.2);
-  border-radius: 4px;
-}
-
-.conversation::-webkit-scrollbar-thumb:hover {
-  background: rgba(121, 129, 146, 0.4);
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .message--user {
@@ -1416,6 +1407,14 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.response-block pre::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .artifacts-panel {

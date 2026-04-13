@@ -40,6 +40,18 @@ button, input, textarea, .sans-font {
   box-sizing: border-box;
 }
 
+/* Ocultar barra de scroll globalmente */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge antiguo */
+}
+
 html,
 body,
 #root {

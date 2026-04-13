@@ -1,9 +1,8 @@
 .app-shell {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   height: 100vh;
-  padding: 16px 24px;
+  padding: 0;
   box-sizing: border-box;
   background-color: transparent;
   transition: gap 0.34s cubic-bezier(0.22, 1, 0.36, 1);
@@ -25,20 +24,18 @@
   width: 100%;
   flex: 0 0 auto;
   background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 20px;
+  border-bottom: 1px solid var(--line);
   padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  top: 16px;
+  top: 0;
   z-index: 12;
   box-sizing: border-box;
   backdrop-filter: blur(var(--glass-blur, 0px));
   -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
 }
 
 .top-navbar__content {
@@ -236,8 +233,8 @@
 
 .sidebar__nav-item.is-active,
 .project-list__item.is-selected {
-  background: rgba(217, 119, 87, 0.11);
-  color: var(--accent);
+  background: var(--panel-soft);
+  color: var(--heading);
   font-weight: 500;
 }
 
@@ -669,22 +666,18 @@
 
 .main-panel,
 .task-layout {
-  background: var(--panel-soft);
-  border: 1px solid var(--line);
-  border-radius: 20px;
+  background: transparent;
   flex: 1;
   min-height: 0;
   box-sizing: border-box;
-  backdrop-filter: blur(var(--glass-blur, 0px));
-  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .main-panel {
-  padding: 8px 10px 16px;
+  padding: 40px 24px;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  align-items: center;
 }
 
 .main-panel--home {
@@ -713,16 +706,17 @@
   flex: 1 1;
   flex-direction: column;
   overflow: visible;
-  padding: 0 16px 16px;
+  padding: 0;
+  width: 100%;
 }
 
 .welcome-title-wrapper {
   align-items: center;
   display: flex;
-  flex: 1 1;
+  flex: 0 0 auto;
   justify-content: center;
   max-width: 860px;
-  min-height: 0;
+  min-height: 240px;
   width: 100%;
 }
 
@@ -819,20 +813,17 @@
 
 .feature-card {
   border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 18px 16px 14px;
-  background: var(--panel);
-  min-height: 128px;
+  border-radius: 16px;
+  padding: 24px;
+  background: var(--panel-soft);
   backdrop-filter: blur(var(--glass-blur, 0px));
   -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(20, 20, 19, 0.08);
-  border-color: var(--accent);
+  transform: translateY(-2px);
+  background: var(--panel);
 }
 
 .feature-card__icon {
@@ -883,23 +874,25 @@
 .composer-card,
 .task-composer {
   border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--panel);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 24px;
+  background: var(--panel-soft);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(var(--glass-blur, 0px));
   -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .composer-card {
   margin-top: 4px;
   width: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.composer-card:focus-within {
+.composer-card:focus-within,
+.task-composer:focus-within {
   transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(20, 20, 19, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
   border-color: var(--accent);
+  background: var(--panel);
 }
 
 .message-input-container .composer-bottom-bar {
@@ -963,8 +956,8 @@
   border-radius: 9999px;
   display: inline-grid;
   place-items: center;
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--btn-dark-bg);
+  color: var(--btn-dark-text);
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -1170,6 +1163,10 @@
 }
 
 .task-main {
+  background: var(--panel-soft);
+  border-right: 1px solid var(--line);
+  backdrop-filter: blur(var(--glass-blur, 0px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   padding: 0 14px 24px;
   display: flex;
   flex-direction: column;
@@ -1182,6 +1179,9 @@
 }
 
 .task-header {
+  background: var(--panel-soft);
+  backdrop-filter: blur(var(--glass-blur, 0px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   align-items: center;
   align-self: stretch;
   border-bottom: 1px solid var(--line);
@@ -1457,6 +1457,9 @@
 }
 
 .task-sidepanel-container {
+  background: var(--panel-soft);
+  backdrop-filter: blur(var(--glass-blur, 0px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   grid-column: 2;
   grid-row: 2;
   height: 100%;
@@ -1504,7 +1507,7 @@
 }
 
 .task-sidepanel {
-  background-color: var(--panel);
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1663,7 +1666,7 @@
 }
 
 .context-status_sidebar {
-  background-color: var(--panel);
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   font-family: inherit;

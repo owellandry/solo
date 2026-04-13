@@ -26,29 +26,27 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
 
   return (
     <section className="main-panel">
-      <header className="topbar" style={{ justifyContent: 'flex-end' }}>
-        <button className="topbar__action topbar__action--dark">
-          <HiOutlinePlus size={14} />
-          <span>{t('skills.upload')}</span>
-        </button>
-      </header>
-
       <div className="skills-page">
         <div className="skills-page__heading">
           <div>
             <h2>{t('skills.title')}</h2>
             <p>{t('skills.desc')}</p>
           </div>
-
-          <label className="searchbox">
-            <HiOutlineMagnifyingGlass size={16} />
-            <input
-              type="search"
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder={t('skills.search')}
-            />
-          </label>
+          <div style={{ display: 'flex', gap: '12px' }}>
+            <label className="searchbox">
+              <HiOutlineMagnifyingGlass size={16} />
+              <input
+                type="search"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder={t('skills.search')}
+              />
+            </label>
+            <button className="topbar__action topbar__action--dark">
+              <HiOutlinePlus size={14} />
+              <span>{t('skills.upload')}</span>
+            </button>
+          </div>
         </div>
 
         <div className="market-tabs">

@@ -1,19 +1,19 @@
 /* Dark theme — solo redefine variables CSS */
 .dark-theme {
   --bg: #0d0d0c;
-  --panel: rgba(20, 20, 19, 0.7);
-  --panel-soft: rgba(20, 20, 19, 0.85);
-  --line: rgba(255, 255, 255, 0.12);
+  --panel: rgba(20, 20, 19, 0.4);
+  --panel-soft: rgba(20, 20, 19, 0.2);
+  --line: rgba(255, 255, 255, 0.05);
   --heading: #ffffff;
   --muted: #a3a19a;
   --accent: #d97757;
   --accent-blue: #6a9bcc;
   --accent-green: #788c5d;
-  --surface-hover: rgba(255, 255, 255, 0.06);
+  --surface-hover: rgba(255, 255, 255, 0.05);
   --btn-dark-bg: #faf9f5;
   --btn-dark-text: #141413;
-  --bubble-bg: rgba(255, 255, 255, 0.05);
-  --glass-blur: 24px;
+  --bubble-bg: rgba(255, 255, 255, 0.03);
+  --glass-blur: 32px;
 }
 
 body.dark-theme {

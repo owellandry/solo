@@ -333,6 +333,11 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
             <span className="session-row__name">{authUser.name}</span>
             <span className="session-row__plan">{authUser.plan}</span>
           </button>
+          
+          <button className="session-row__desktop" aria-label={t('sidebar.footer.getDesktop')}>
+            <HiOutlineArrowDownTray size={14} />
+            <span>{t('sidebar.footer.getDesktop')}</span>
+          </button>
         </div>
       </div>
     </div>

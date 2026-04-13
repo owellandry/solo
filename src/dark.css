@@ -1,19 +1,21 @@
 /* Dark theme — solo redefine variables CSS */
 .dark-theme {
-  --bg: #18191c;
-  --panel: #222327;
-  --panel-soft: #2c2d32;
-  --line: #3a3b40;
-  --heading: #e9ecef;
-  --muted: #868e96;
-  --accent: #845ef7;
-  --surface-hover: rgba(255, 255, 255, 0.07);
-  --btn-dark-bg: #2c2d32;
-  --bubble-bg: #2a1f45;
+  --bg: #141413;
+  --panel: #1e1e1d;
+  --panel-soft: #282826;
+  --line: #42423f;
+  --heading: #faf9f5;
+  --muted: #b0aea5;
+  --accent: #d97757;
+  --accent-blue: #6a9bcc;
+  --accent-green: #788c5d;
+  --surface-hover: rgba(250, 249, 245, 0.05);
+  --btn-dark-bg: #282826;
+  --bubble-bg: #282826;
 }
 
 body.dark-theme {
-  background: linear-gradient(180deg, #18191c 0%, #111214 100%);
+  background: var(--bg);
 }
 
 /* Backdrop del modal (usa rgba hardcodeado en App.css) */
@@ -52,8 +54,8 @@ body.dark-theme {
 /* Badge del plan (color de estado, no de tema) */
 .dark-theme .session-row__plan,
 .dark-theme .user-menu .session-row__plan {
-  background: #1a3828;
-  color: #6fcf97;
+  background: rgba(120, 140, 93, 0.2);
+  color: var(--accent-green);
 }
 
 /* Sombras más pronunciadas en fondo oscuro */

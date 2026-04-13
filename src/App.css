@@ -1294,12 +1294,23 @@
   max-width: 680px;
   width: 100%;
   margin: 0 auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  /* Cambiado: scrollbar estilizado pero muy disimulado */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(121, 129, 146, 0.2) transparent;
 }
 
 .conversation::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  width: 4px;
+  background: transparent;
+}
+
+.conversation::-webkit-scrollbar-thumb {
+  background: rgba(121, 129, 146, 0.2);
+  border-radius: 4px;
+}
+
+.conversation::-webkit-scrollbar-thumb:hover {
+  background: rgba(121, 129, 146, 0.4);
 }
 
 .message--user {

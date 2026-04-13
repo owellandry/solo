@@ -4,9 +4,9 @@
   --font-lora: 'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-poppins: 'Poppins', ui-sans-serif, system-ui, sans-serif;
   --bg: #faf9f5;
-  --panel: rgba(255, 255, 255, 0.9);
-  --panel-soft: rgba(232, 230, 220, 0.8);
-  --line: #d1cfc7;
+  --panel: rgba(255, 255, 255, 0.7);
+  --panel-soft: rgba(232, 230, 220, 0.6);
+  --line: rgba(209, 207, 199, 0.5);
   --heading: #141413;
   --muted: #737373;
   --accent: #d97757;

@@ -38,6 +38,7 @@
   backdrop-filter: blur(var(--glass-blur, 0px));
   -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .top-navbar__content {
@@ -668,7 +669,7 @@
 
 .main-panel,
 .task-layout {
-  background: var(--panel);
+  background: var(--panel-soft);
   border: 1px solid var(--line);
   border-radius: 20px;
   flex: 1;
@@ -676,6 +677,7 @@
   box-sizing: border-box;
   backdrop-filter: blur(var(--glass-blur, 0px));
   -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .main-panel {
@@ -824,6 +826,7 @@
   backdrop-filter: blur(var(--glass-blur, 0px));
   -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .feature-card:hover {
@@ -882,7 +885,7 @@
   border: 1px solid var(--line);
   border-radius: 20px;
   background: var(--panel);
-  box-shadow: 0 14px 32px rgba(20, 20, 19, 0.08);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(var(--glass-blur, 0px));
   -webkit-backdrop-filter: blur(var(--glass-blur, 0px));
 }

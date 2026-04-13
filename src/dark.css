@@ -1,9 +1,9 @@
 /* Dark theme — solo redefine variables CSS */
 .dark-theme {
   --bg: #0d0d0c;
-  --panel: rgba(20, 20, 19, 0.5);
-  --panel-soft: rgba(20, 20, 19, 0.8);
-  --line: rgba(255, 255, 255, 0.08);
+  --panel: rgba(20, 20, 19, 0.7);
+  --panel-soft: rgba(20, 20, 19, 0.85);
+  --line: rgba(255, 255, 255, 0.12);
   --heading: #ffffff;
   --muted: #a3a19a;
   --accent: #d97757;
@@ -69,6 +69,12 @@ body.dark-theme {
 .dark-theme .user-menu,
 .dark-theme .user-submenu {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .main-panel,
+.dark-theme .task-layout,
+.dark-theme .top-navbar {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .dark-theme .composer-card,

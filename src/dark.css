@@ -1,19 +1,19 @@
 /* Dark theme — solo redefine variables CSS */
 .dark-theme {
-  --bg: #0d0d0c;
-  --panel: rgba(20, 20, 19, 0.4);
-  --panel-soft: rgba(20, 20, 19, 0.2);
-  --line: rgba(255, 255, 255, 0.05);
+  --bg: #0e0e0d;
+  --sidebar-bg: #151514;
+  --panel: #1a1a19;
+  --panel-soft: #151514;
+  --line: #272725;
   --heading: #ffffff;
   --muted: #a3a19a;
   --accent: #d97757;
   --accent-blue: #6a9bcc;
   --accent-green: #788c5d;
   --surface-hover: rgba(255, 255, 255, 0.05);
-  --btn-dark-bg: #faf9f5;
-  --btn-dark-text: #141413;
-  --bubble-bg: rgba(255, 255, 255, 0.03);
-  --glass-blur: 32px;
+  --btn-dark-bg: #ffffff;
+  --btn-dark-text: #111110;
+  --bubble-bg: #1a1a19;
 }
 
 body.dark-theme {
@@ -73,8 +73,8 @@ body.dark-theme {
 
 .dark-theme .main-panel,
 .dark-theme .task-layout,
-.dark-theme .top-navbar {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+.dark-theme .sidebar {
+  box-shadow: none;
 }
 
 .dark-theme .composer-card,

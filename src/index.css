@@ -3,21 +3,21 @@
 :root {
   --font-lora: 'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-poppins: 'Poppins', ui-sans-serif, system-ui, sans-serif;
-  --bg: #faf9f5;
-  --panel: rgba(255, 255, 255, 0.6);
-  --panel-soft: rgba(255, 255, 255, 0.3);
-  --line: rgba(0, 0, 0, 0.06);
-  --heading: #141413;
+  --bg: #ffffff;
+  --sidebar-bg: #f9f9f8;
+  --panel: #ffffff;
+  --panel-soft: #f4f4f3;
+  --line: #e5e5e5;
+  --heading: #111110;
   --muted: #737373;
   --accent: #d97757;
   --accent-blue: #6a9bcc;
   --accent-green: #788c5d;
   --surface-hover: rgba(0, 0, 0, 0.04);
-  --btn-dark-bg: #141413;
+  --btn-dark-bg: #111110;
   --btn-dark-text: #ffffff;
-  --bubble-bg: rgba(0, 0, 0, 0.03);
-  --glass-blur: 24px;
-  font-family: var(--font-lora);
+  --bubble-bg: #f4f4f3;
+  font-family: var(--font-poppins);
   color: var(--heading);
   background: var(--bg);
   font-synthesis: none;
@@ -26,8 +26,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins);
+h1, h2, h3, h4, h5, h6, .hero-copy h1 {
+  font-family: var(--font-lora);
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 button, input, textarea, .sans-font {

@@ -21,6 +21,15 @@ export function SidebarTop({ mode, onToggleMode, onToggleCollapse, isCollapsed }
           </span>
         </span>
       </button>
+
+      <button 
+        className="sidebar__ghost" 
+        onClick={onToggleCollapse} 
+        aria-label="Toggle sidebar"
+        style={{ display: 'grid', placeItems: 'center', width: '32px', height: '32px' }}
+      >
+        <HiOutlineViewColumns size={18} />
+      </button>
     </div>
   )
 }

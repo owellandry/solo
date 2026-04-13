@@ -20,32 +20,31 @@ export function Sidebar({
   selectedProjectId,
 }) {
   return (
-    <header className="top-navbar">
-      <div className="top-navbar__content">
-        <div className="top-navbar__left">
-          <SidebarTop
-            mode={mode}
-            onToggleMode={onToggleMode}
-            onToggleCollapse={onToggleCollapse}
-            isCollapsed={false}
-          />
-        </div>
+    <aside className={`sidebar ${isCollapsed ? 'is-collapsed' : ''}`}>
+      <div className="sidebar__inner">
+        <SidebarTop
+          mode={mode}
+          onToggleMode={onToggleMode}
+          onToggleCollapse={onToggleCollapse}
+          isCollapsed={isCollapsed}
+        />
 
-        <div className="top-navbar__center">
+        <div className="sidebar__scrollable">
           <SidebarNavigation
             activeView={activeView}
             onShowHome={onShowHome}
             onShowSkills={onShowSkills}
           />
-        </div>
 
-        <div className="top-navbar__right">
-          {/* <SidebarProjectList
+          <SidebarProjectList
             activeView={activeView}
             projects={projects}
             selectedProjectId={selectedProjectId}
             onOpenProject={onOpenProject}
-          /> */}
+          />
+        </div>
+
+        <div className="sidebar__bottom">
           {authUser ? (
             <SidebarLoggedInFooter authUser={authUser} onLogout={onLogout} />
           ) : (
@@ -53,6 +52,6 @@ export function Sidebar({
           )}
         </div>
       </div>
-    </header>
+    </aside>
   )
 }

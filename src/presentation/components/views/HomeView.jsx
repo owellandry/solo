@@ -1,6 +1,7 @@
 import { FeatureCard } from './home/FeatureCard'
 import { ComposerCard } from './home/ComposerCard'
 import { useTranslation } from 'react-i18next'
+import { HiOutlineViewColumns } from 'react-icons/hi2'
 
 export function HomeView({
   workspace,
@@ -19,7 +20,17 @@ export function HomeView({
   const titleParts = heroTitle.split(' ')
 
   return (
-    <section className="main-panel main-panel--home">
+    <section className="main-panel main-panel--home" style={{ position: 'relative' }}>
+      {isCollapsed && (
+        <button 
+          className="sidebar__ghost" 
+          onClick={onToggleCollapse} 
+          aria-label="Expand sidebar"
+          style={{ position: 'absolute', top: '16px', left: '16px', display: 'grid', placeItems: 'center', width: '32px', height: '32px', zIndex: 10 }}
+        >
+          <HiOutlineViewColumns size={18} />
+        </button>
+      )}
       <div className="workspace-home">
         <div className="welcome-title-wrapper">
           <div className="welcome-title">

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { HiOutlineMagnifyingGlass, HiOutlinePlus } from 'react-icons/hi2'
+import { HiOutlineMagnifyingGlass, HiOutlinePlus, HiOutlineViewColumns } from 'react-icons/hi2'
 import { useTranslation } from 'react-i18next'
 
 import { useSkills } from './useSkills'
@@ -20,12 +20,21 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
       skill.title.toLowerCase().includes(query) ||
       skill.description.toLowerCase().includes(query) ||
       skill.provider.toLowerCase().includes(query)
-
     return matchesCategory && matchesSearch
   })
 
   return (
-    <section className="main-panel">
+    <section className="main-panel" style={{ position: 'relative' }}>
+      {isCollapsed && (
+        <button 
+          className="sidebar__ghost" 
+          onClick={onToggleCollapse} 
+          aria-label="Expand sidebar"
+          style={{ position: 'absolute', top: '16px', left: '16px', display: 'grid', placeItems: 'center', width: '32px', height: '32px', zIndex: 10 }}
+        >
+          <HiOutlineViewColumns size={18} />
+        </button>
+      )}
       <div className="skills-page">
         <div className="skills-page__heading">
           <div>

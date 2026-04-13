@@ -1,4 +1,4 @@
-import { HiOutlineBars3 } from 'react-icons/hi2';
+import { HiOutlineBars3, HiOutlineViewColumns } from 'react-icons/hi2';
 import { FaGithub } from 'react-icons/fa6';
 
 export function TaskHeader({
@@ -17,6 +17,16 @@ export function TaskHeader({
   return (
     <header className="task-header">
       <div className="task-header__left">
+        {isCollapsed && (
+          <button 
+            className="sidebar__ghost" 
+            onClick={onToggleCollapse} 
+            aria-label="Expand sidebar"
+            style={{ display: 'grid', placeItems: 'center', width: '32px', height: '32px', marginRight: '8px' }}
+          >
+            <HiOutlineViewColumns size={18} />
+          </button>
+        )}
         <div className="task-header__center">
           <div className="task-header__title-row">
             <h2>{project.title}</h2>

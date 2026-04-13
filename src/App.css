@@ -23,14 +23,17 @@
   flex-direction: column;
   height: 100vh;
   position: relative;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 10;
 }
 
 .sidebar.is-collapsed {
   width: 0;
-  transform: translateX(-100%);
   border-right: none;
+}
+
+.sidebar.is-collapsed .sidebar__inner {
+  transform: translateX(-100%);
 }
 
 .sidebar__inner {
@@ -41,6 +44,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .sidebar__scrollable {

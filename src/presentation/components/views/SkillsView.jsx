@@ -28,6 +28,7 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
     <section className="main-panel" style={{ position: 'relative' }}>
       {isCollapsed && (
         <div style={{ position: 'absolute', top: '16px', left: '16px', display: 'flex', alignItems: 'center', gap: '8px', zIndex: 10 }}>
+          <ModeSwitch mode={mode} onToggleMode={onToggleMode} />
           <button 
             className="sidebar__ghost" 
             onClick={onToggleCollapse} 
@@ -36,7 +37,6 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
           >
             <HiOutlineViewColumns size={18} />
           </button>
-          <ModeSwitch mode={mode} onToggleMode={onToggleMode} />
         </div>
       )}
       <div className="skills-page">

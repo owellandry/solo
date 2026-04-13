@@ -20,6 +20,7 @@ export function TaskHeader({
       <div className="task-header__left">
         {isCollapsed && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginRight: '8px' }}>
+            <ModeSwitch mode={mode} onToggleMode={onToggleMode} />
             <button 
               className="sidebar__ghost" 
               onClick={onToggleCollapse} 
@@ -28,7 +29,6 @@ export function TaskHeader({
             >
               <HiOutlineViewColumns size={18} />
             </button>
-            <ModeSwitch mode={mode} onToggleMode={onToggleMode} />
           </div>
         )}
         <div className="task-header__center">

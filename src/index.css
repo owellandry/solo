@@ -2,17 +2,19 @@
 
 :root {
   --bg: #faf9f5;
-  --panel: #ffffff;
-  --panel-soft: #e8e6dc;
-  --line: #b0aea5;
+  --panel: rgba(255, 255, 255, 0.9);
+  --panel-soft: rgba(232, 230, 220, 0.8);
+  --line: #d1cfc7;
   --heading: #141413;
   --muted: #737373;
   --accent: #d97757;
   --accent-blue: #6a9bcc;
   --accent-green: #788c5d;
-  --surface-hover: #f2efe6;
+  --surface-hover: rgba(20, 20, 19, 0.04);
   --btn-dark-bg: #141413;
+  --btn-dark-text: #ffffff;
   --bubble-bg: #e8e6dc;
+  --glass-blur: 16px;
   font-family: 'Lora', Georgia, serif;
   color: var(--heading);
   background: var(--bg);

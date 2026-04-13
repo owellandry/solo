@@ -1,21 +1,28 @@
 /* Dark theme — solo redefine variables CSS */
 .dark-theme {
-  --bg: #141413;
-  --panel: #1e1e1d;
-  --panel-soft: #282826;
-  --line: #42423f;
-  --heading: #faf9f5;
-  --muted: #b0aea5;
+  --bg: #0d0d0c;
+  --panel: rgba(20, 20, 19, 0.5);
+  --panel-soft: rgba(20, 20, 19, 0.8);
+  --line: rgba(255, 255, 255, 0.08);
+  --heading: #ffffff;
+  --muted: #a3a19a;
   --accent: #d97757;
   --accent-blue: #6a9bcc;
   --accent-green: #788c5d;
-  --surface-hover: rgba(250, 249, 245, 0.05);
-  --btn-dark-bg: #282826;
-  --bubble-bg: #282826;
+  --surface-hover: rgba(255, 255, 255, 0.06);
+  --btn-dark-bg: #faf9f5;
+  --btn-dark-text: #141413;
+  --bubble-bg: rgba(255, 255, 255, 0.05);
+  --glass-blur: 24px;
 }
 
 body.dark-theme {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(217, 119, 87, 0.06), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(106, 155, 204, 0.06), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(120, 140, 93, 0.05), transparent 40%);
+  background-attachment: fixed;
 }
 
 /* Backdrop del modal (usa rgba hardcodeado en App.css) */

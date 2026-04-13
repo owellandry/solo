@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import { useSkills } from './useSkills'
 import { SkillCard } from './skills/SkillCard'
+import { ModeSwitch } from '../common/ModeSwitch'
 
 export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }) {
   const { t } = useTranslation();
@@ -26,14 +27,17 @@ export function SkillsView({ mode, onToggleMode, isCollapsed, onToggleCollapse }
   return (
     <section className="main-panel" style={{ position: 'relative' }}>
       {isCollapsed && (
-        <button 
-          className="sidebar__ghost" 
-          onClick={onToggleCollapse} 
-          aria-label="Expand sidebar"
-          style={{ position: 'absolute', top: '16px', left: '16px', display: 'grid', placeItems: 'center', width: '32px', height: '32px', zIndex: 10 }}
-        >
-          <HiOutlineViewColumns size={18} />
-        </button>
+        <div style={{ position: 'absolute', top: '16px', left: '16px', display: 'flex', alignItems: 'center', gap: '8px', zIndex: 10 }}>
+          <button 
+            className="sidebar__ghost" 
+            onClick={onToggleCollapse} 
+            aria-label="Expand sidebar"
+            style={{ display: 'grid', placeItems: 'center', width: '32px', height: '32px' }}
+          >
+            <HiOutlineViewColumns size={18} />
+          </button>
+          <ModeSwitch mode={mode} onToggleMode={onToggleMode} />
+        </div>
       )}
       <div className="skills-page">
         <div className="skills-page__heading">

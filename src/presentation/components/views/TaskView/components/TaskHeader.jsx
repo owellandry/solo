@@ -1,5 +1,6 @@
 import { HiOutlineBars3, HiOutlineViewColumns } from 'react-icons/hi2';
 import { FaGithub } from 'react-icons/fa6';
+import { ModeSwitch } from '../../../common/ModeSwitch';
 
 export function TaskHeader({
   project,
@@ -18,14 +19,17 @@ export function TaskHeader({
     <header className="task-header">
       <div className="task-header__left">
         {isCollapsed && (
-          <button 
-            className="sidebar__ghost" 
-            onClick={onToggleCollapse} 
-            aria-label="Expand sidebar"
-            style={{ display: 'grid', placeItems: 'center', width: '32px', height: '32px', marginRight: '8px' }}
-          >
-            <HiOutlineViewColumns size={18} />
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginRight: '8px' }}>
+            <button 
+              className="sidebar__ghost" 
+              onClick={onToggleCollapse} 
+              aria-label="Expand sidebar"
+              style={{ display: 'grid', placeItems: 'center', width: '32px', height: '32px' }}
+            >
+              <HiOutlineViewColumns size={18} />
+            </button>
+            <ModeSwitch mode={mode} onToggleMode={onToggleMode} />
+          </div>
         )}
         <div className="task-header__center">
           <div className="task-header__title-row">

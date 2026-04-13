@@ -1416,6 +1416,11 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: auto;
+  color: var(--heading);
+}
+
+.response-block pre code {
+  color: inherit;
 }
 
 .artifacts-panel {

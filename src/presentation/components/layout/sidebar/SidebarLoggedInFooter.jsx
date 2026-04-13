@@ -238,11 +238,10 @@ export function SidebarLoggedInFooter({ authUser, onLogout }) {
 
   useEffect(() => {
     localStorage.setItem('solo-theme', theme)
-    if (theme === 'Dark') {
-      document.body.classList.add('dark-theme')
-    } else {
-      document.body.classList.remove('dark-theme')
-    }
+    const isDarkTheme = theme === 'Dark'
+
+    document.documentElement.classList.toggle('dark-theme', isDarkTheme)
+    document.body.classList.toggle('dark-theme', isDarkTheme)
   }, [theme])
   const menuRef = useRef(null)
   const itemRefs = useRef({})

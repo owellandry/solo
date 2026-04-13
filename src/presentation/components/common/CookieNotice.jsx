@@ -1,6 +1,9 @@
 import { HiOutlineXMark } from 'react-icons/hi2'
+import { useTranslation } from 'react-i18next'
 
 export function CookieNotice({ visible, onClose }) {
+  const { t } = useTranslation();
+
   if (!visible) {
     return null
   }
@@ -11,12 +14,11 @@ export function CookieNotice({ visible, onClose }) {
         <HiOutlineXMark size={15} />
       </button>
 
-      <h3>Cookie Notice</h3>
+      <h3>{t('cookies.title')}</h3>
       <p>
-        TRAE uses cookies and similar technologies to provide, secure, analyse, improve and
-        market our services. Learn more in our Cookies Policy.
+        {t('cookies.notice')}
       </p>
-      <button className="cookie-notice__action">Got it</button>
+      <button className="cookie-notice__action" onClick={onClose}>{t('cookies.accept')}</button>
     </aside>
   )
 }

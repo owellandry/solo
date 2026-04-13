@@ -1,0 +1,89 @@
+/* Dark theme — solo redefine variables CSS */
+.dark-theme {
+  --bg: #18191c;
+  --panel: #222327;
+  --panel-soft: #2c2d32;
+  --line: #3a3b40;
+  --heading: #e9ecef;
+  --muted: #868e96;
+  --accent: #845ef7;
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  --btn-dark-bg: #2c2d32;
+  --bubble-bg: #2a1f45;
+}
+
+body.dark-theme {
+  background: linear-gradient(180deg, #18191c 0%, #111214 100%);
+}
+
+/* Backdrop del modal (usa rgba hardcodeado en App.css) */
+.dark-theme .modal-backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Access card: tiene gradiente hardcodeado en App.css */
+.dark-theme .access-card {
+  background: var(--panel-soft);
+}
+
+/* Mode switch: colores de marca propios, no son colores de tema */
+.dark-theme .mode-switch--office {
+  background: #353580;
+}
+
+.dark-theme .mode-switch--office:hover {
+  background: #3d3d95;
+}
+
+.dark-theme .mode-switch--code {
+  background: #1e3d28;
+}
+
+.dark-theme .mode-switch--code:hover {
+  background: #24482f;
+}
+
+/* Thumb del switch: ajuste de borde e sombra para fondo oscuro */
+.dark-theme .mode-switch__thumb {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Badge del plan (color de estado, no de tema) */
+.dark-theme .session-row__plan,
+.dark-theme .user-menu .session-row__plan {
+  background: #1a3828;
+  color: #6fcf97;
+}
+
+/* Sombras más pronunciadas en fondo oscuro */
+.dark-theme .user-menu,
+.dark-theme .user-submenu {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .composer-card,
+.dark-theme .task-composer {
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .login-modal {
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .cookie-notice {
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
+}
+
+/* Scrollbar */
+.dark-theme ::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--line);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

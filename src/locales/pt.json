@@ -1,0 +1,120 @@
+{
+  "sidebar": {
+    "mode": {
+      "code": "Código",
+      "mtc": "MTC",
+      "switch": "Mudar para o modo {{mode}}"
+    },
+    "nav": {
+      "newTask": "Nova tarefa",
+      "skills": "Habilidades"
+    },
+    "projects": {
+      "title": "Lista de projetos",
+      "emptyTitle": "Nenhum projeto ainda",
+      "emptyDesc": "Selecione um projeto para começar"
+    },
+    "footer": {
+      "freeAccessTitle": "Acesso Gratuito Limitado Ativo",
+      "freeAccessDesc": "As solicitações de IA são gratuitas por tempo limitado. Diga ao SOLO o que você precisa.",
+      "getDesktop": "Obter App",
+      "login": "Entrar"
+    },
+    "menu": {
+      "manageAccount": "Gerenciar Conta",
+      "language": "Idioma",
+      "theme": "Tema",
+      "settings": "Configurações",
+      "downloadDesktop": "Baixar SOLO para Desktop",
+      "logout": "Sair"
+    },
+    "submenu": {
+      "account": "Conta",
+      "planBilling": "Plano e Faturamento",
+      "usage": "Uso"
+    }
+  },
+  "home": {
+    "beta": "BETA"
+  },
+  "composer": {
+    "createProject": "Criar projeto",
+    "editPrompt": "Editar prompt",
+    "addMedia": "Adicionar mídia",
+    "model": "SOLO Modelo Automático",
+    "selectRepo": "Selecionar repo",
+    "selectBranch": "Selecionar branch",
+    "defaultEnv": "Ambiente Padrão",
+    "placeholder": "Ajuda a organizar revisões de literatura, criar PPTs, analisar dados do Excel e outro trabalho diário, produzindo entregáveis profissionais."
+  },
+  "skills": {
+    "upload": "Enviar Habilidade",
+    "title": "Habilidades",
+    "desc": "Instale e gerencie habilidades para desbloquear novas capacidades para o SOLO.",
+    "search": "Buscar",
+    "marketplace": "Mercado",
+    "developerTools": "Ferramentas de Desenvolvedor",
+    "byProvider": "por {{provider}}"
+  },
+  "task": {
+    "imagesAttached": "Imagens anexadas {{count}}",
+    "soloCode": "Código SOLO",
+    "thought": "Pensamento",
+    "commandExecuted": "Comando executado",
+    "previewWebPage": "Visualizar página da web",
+    "artifacts": "Artefatos",
+    "completed": "Concluído",
+    "workedFor": "Trabalhou por {{time}}",
+    "sidepanel": {
+      "todo": "A fazer",
+      "completedCount": "{{count}} concluídas",
+      "taskOutputs": "Saídas da Tarefa",
+      "context": "Contexto",
+      "references": "Referências",
+      "compact": "compactar"
+    }
+  },
+  "login": {
+    "title": "Entrar",
+    "github": "GitHub",
+    "google": "Google",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "E-mail",
+    "passwordLabel": "Senha",
+    "passwordPlaceholder": "Senha",
+    "forgetPassword": "Esqueceu a senha?",
+    "noAccount": "Não tem uma conta?",
+    "signUp": "Inscreva-se",
+    "agreePrefix": "ao continuar, você concorda com os Termos de Serviço e Política de Privacidade do TRAE",
+    "submit": "Entrar"
+  },
+  "cookies": {
+    "title": "Aviso de Cookies",
+    "notice": "A TRAE usa cookies e tecnologias semelhantes para fornecer, proteger, analisar, melhorar e comercializar nossos serviços. Saiba mais em nossa Política de Cookies.",
+    "accept": "Entendi"
+  },
+  "workspace": {
+    "office": {
+      "heroTitle": "Mais Que Código",
+      "heroSubtitle": "Deixe o SOLO lidar com todas as suas tarefas de escritório",
+      "heroDescription": "Ajuda você a organizar revisões de literatura, criar PPTs, analisar dados do Excel e outro trabalho diário, produzindo entregáveis profissionais.",
+      "cards": {
+        "reading": { "title": "Leitura Web", "desc": "Leia artigos online para produzir revisões de literatura." },
+        "research": { "title": "Pesquisa e Análise", "desc": "Pesquise plataformas de vídeo e gere apresentações." },
+        "mining": { "title": "Mineração de Dados", "desc": "Minere dados do mercado de IA e analise tendências." },
+        "content": { "title": "Criação de Conteúdo", "desc": "Gere postagens promocionais com materiais." }
+      }
+    },
+    "code": {
+      "heroTitle": "Programe com o SOLO",
+      "heroSubtitle": "Deixe o SOLO lidar com todas as suas tarefas de desenvolvimento",
+      "heroDescription": "Ajuda você a escrever código, depurar, otimizar desempenho e outro trabalho de desenvolvimento, entregando código pronto para produção.",
+      "cards": {
+        "app-dev": { "title": "Desenvolvimento de Aplicações", "desc": "Implemente uma plataforma de aprendizado multilíngue." },
+        "understanding": { "title": "Compreensão de Projetos", "desc": "Analise o repositório do projeto e gere uma wiki de código." },
+        "game": { "title": "Criatividade em Jogos", "desc": "Crie um jogo de batalha mecha em pixel art." },
+        "automation": { "title": "Ferramentas de Automação", "desc": "Escreva uma ferramenta de automação para coletar dados." }
+      }
+    }
+  }
+}

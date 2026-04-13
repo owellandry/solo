@@ -1,0 +1,45 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+import en from './locales/en.json';
+import es from './locales/es.json';
+import pt from './locales/pt.json';
+import fr from './locales/fr.json';
+import de from './locales/de.json';
+import ru from './locales/ru.json';
+import id from './locales/id.json';
+import zh from './locales/zh.json';
+import ja from './locales/ja.json';
+import ar from './locales/ar.json';
+
+const savedLanguage = localStorage.getItem('solo-lang') || 'en';
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: { translation: en },
+      es: { translation: es },
+      pt: { translation: pt },
+      fr: { translation: fr },
+      de: { translation: de },
+      ru: { translation: ru },
+      id: { translation: id },
+      zh: { translation: zh },
+      ja: { translation: ja },
+      ar: { translation: ar },
+    },
+    lng: savedLanguage,
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.dir = i18n.dir(lng);
+});
+
+document.documentElement.dir = i18n.dir(i18n.language);
+
+export default i18n;

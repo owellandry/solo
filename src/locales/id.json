@@ -1,0 +1,144 @@
+{
+  "sidebar": {
+    "mode": {
+      "code": "Kode",
+      "mtc": "MTC",
+      "switch": "Beralih ke mode {{mode}}"
+    },
+    "nav": {
+      "newTask": "Tugas baru",
+      "skills": "Keterampilan"
+    },
+    "projects": {
+      "title": "Daftar proyek",
+      "emptyTitle": "Belum ada proyek",
+      "emptyDesc": "Pilih proyek untuk memulai"
+    },
+    "footer": {
+      "freeAccessTitle": "Akses Gratis Terbatas Aktif",
+      "freeAccessDesc": "Permintaan AI gratis untuk waktu terbatas. Beri tahu SOLO apa yang Anda butuhkan.",
+      "getDesktop": "Dapatkan App",
+      "login": "Masuk"
+    },
+    "menu": {
+      "manageAccount": "Kelola Akun",
+      "language": "Bahasa",
+      "theme": "Tema",
+      "settings": "Pengaturan",
+      "downloadDesktop": "Unduh SOLO Desktop",
+      "logout": "Keluar"
+    },
+    "submenu": {
+      "account": "Akun",
+      "planBilling": "Paket & Tagihan",
+      "usage": "Penggunaan"
+    }
+  },
+  "home": {
+    "beta": "BETA"
+  },
+  "composer": {
+    "createProject": "Buat proyek",
+    "editPrompt": "Edit prompt",
+    "addMedia": "Tambahkan media",
+    "model": "SOLO Auto Model",
+    "selectRepo": "Pilih repo",
+    "selectBranch": "Pilih branch",
+    "defaultEnv": "Lingkungan Default",
+    "placeholder": "Membantu Anda mengatur tinjauan literatur, membuat PPT, menganalisis data Excel, dan pekerjaan sehari-hari lainnya, menghasilkan hasil profesional."
+  },
+  "skills": {
+    "upload": "Unggah Keterampilan",
+    "title": "Keterampilan",
+    "desc": "Instal dan kelola keterampilan untuk membuka kemampuan baru bagi SOLO.",
+    "search": "Cari",
+    "marketplace": "Pasar",
+    "developerTools": "Alat Pengembang",
+    "byProvider": "oleh {{provider}}"
+  },
+  "task": {
+    "imagesAttached": "Gambar terlampir {{count}}",
+    "soloCode": "Kode SOLO",
+    "thought": "Pikiran",
+    "commandExecuted": "Perintah dieksekusi",
+    "previewWebPage": "Pratinjau halaman web",
+    "artifacts": "Artefak",
+    "completed": "Selesai",
+    "workedFor": "Bekerja selama {{time}}",
+    "sidepanel": {
+      "todo": "Daftar Tugas",
+      "completedCount": "{{count}} selesai",
+      "taskOutputs": "Output Tugas",
+      "context": "Konteks",
+      "references": "Referensi",
+      "compact": "ringkas"
+    }
+  },
+  "login": {
+    "title": "Masuk",
+    "github": "GitHub",
+    "google": "Google",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Kata Sandi",
+    "passwordPlaceholder": "Kata Sandi",
+    "forgetPassword": "Lupa kata sandi?",
+    "noAccount": "Belum punya akun?",
+    "signUp": "Daftar",
+    "agreePrefix": "dengan melanjutkan, Anda menyetujui Persyaratan Layanan dan Kebijakan Privasi TRAE",
+    "submit": "Masuk"
+  },
+  "cookies": {
+    "title": "Pemberitahuan Cookie",
+    "notice": "TRAE menggunakan cookie dan teknologi serupa untuk menyediakan, mengamankan, menganalisis, meningkatkan, dan memasarkan layanan kami. Pelajari lebih lanjut dalam Kebijakan Cookie kami.",
+    "accept": "Mengerti"
+  },
+  "workspace": {
+    "office": {
+      "heroTitle": "Lebih Dari Sekadar Kode",
+      "heroSubtitle": "Biarkan SOLO menangani semua tugas kantor Anda",
+      "heroDescription": "Membantu Anda mengatur tinjauan literatur, membuat PPT, menganalisis data Excel, dan pekerjaan sehari-hari lainnya, menghasilkan hasil profesional.",
+      "cards": {
+        "reading": {
+          "title": "Membaca Web",
+          "desc": "Baca makalah online untuk menghasilkan tinjauan literatur."
+        },
+        "research": {
+          "title": "Riset dan Analisis",
+          "desc": "Teliti platform video dan hasilkan presentasi."
+        },
+        "mining": {
+          "title": "Penambangan Data",
+          "desc": "Tambang data pasar AI dan analisis tren data."
+        },
+        "content": {
+          "title": "Pembuatan konten",
+          "desc": "Hasilkan postingan promosi dengan materi."
+        }
+      }
+    },
+    "code": {
+      "heroTitle": "Kode dengan SOLO",
+      "heroSubtitle": "Biarkan SOLO menangani semua tugas pengembangan Anda",
+      "heroDescription": "Membantu Anda menulis kode, men-debug, mengoptimalkan kinerja, dan pekerjaan pengembangan lainnya, memberikan kode siap produksi.",
+      "cards": {
+        "app-dev": {
+          "title": "Pengembangan Aplikasi",
+          "desc": "Implementasikan platform pembelajaran multi-bahasa."
+        },
+        "understanding": {
+          "title": "Pemahaman Proyek",
+          "desc": "Analisis repositori proyek dan buat wiki kode."
+        },
+        "game": {
+          "title": "Kreativitas Game",
+          "desc": "Buat game pertempuran mecha seni piksel."
+        },
+        "automation": {
+          "title": "Alat Otomatisasi",
+          "desc": "Tulis alat otomatisasi untuk mengumpulkan data."
+        }
+      }
+    }
+  }
+}

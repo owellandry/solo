@@ -1,0 +1,144 @@
+{
+  "sidebar": {
+    "mode": {
+      "code": "Code",
+      "mtc": "MTC",
+      "switch": "Passer au mode {{mode}}"
+    },
+    "nav": {
+      "newTask": "Nouvelle tâche",
+      "skills": "Compétences"
+    },
+    "projects": {
+      "title": "Liste des projets",
+      "emptyTitle": "Aucun projet",
+      "emptyDesc": "Sélectionnez un projet pour commencer"
+    },
+    "footer": {
+      "freeAccessTitle": "Accès Gratuit Limité Actif",
+      "freeAccessDesc": "Les requêtes IA sont gratuites pour un temps limité. Dites à SOLO ce dont vous avez besoin.",
+      "getDesktop": "Obtenir l'App",
+      "login": "Se connecter"
+    },
+    "menu": {
+      "manageAccount": "Gérer le compte",
+      "language": "Langue",
+      "theme": "Thème",
+      "settings": "Paramètres",
+      "downloadDesktop": "Télécharger SOLO Bureau",
+      "logout": "Déconnexion"
+    },
+    "submenu": {
+      "account": "Compte",
+      "planBilling": "Forfaits & Facturation",
+      "usage": "Utilisation"
+    }
+  },
+  "home": {
+    "beta": "BÊTA"
+  },
+  "composer": {
+    "createProject": "Créer un projet",
+    "editPrompt": "Modifier le prompt",
+    "addMedia": "Ajouter un média",
+    "model": "Modèle Auto SOLO",
+    "selectRepo": "Sélectionner le dépôt",
+    "selectBranch": "Sélectionner la branche",
+    "defaultEnv": "Env par défaut",
+    "placeholder": "Aide à organiser des revues de littérature, créer des PPT, analyser des données Excel et d'autres tâches quotidiennes, en fournissant des livrables professionnels."
+  },
+  "skills": {
+    "upload": "Ajouter une compétence",
+    "title": "Compétences",
+    "desc": "Installez et gérez des compétences pour débloquer de nouvelles capacités pour SOLO.",
+    "search": "Rechercher",
+    "marketplace": "Marché",
+    "developerTools": "Outils de développement",
+    "byProvider": "par {{provider}}"
+  },
+  "task": {
+    "imagesAttached": "Images jointes {{count}}",
+    "soloCode": "Code SOLO",
+    "thought": "Pensée",
+    "commandExecuted": "Commande exécutée",
+    "previewWebPage": "Aperçu de la page web",
+    "artifacts": "Artefacts",
+    "completed": "Terminé",
+    "workedFor": "A travaillé pendant {{time}}",
+    "sidepanel": {
+      "todo": "À faire",
+      "completedCount": "{{count}} terminées",
+      "taskOutputs": "Résultats de la tâche",
+      "context": "Contexte",
+      "references": "Références",
+      "compact": "réduire"
+    }
+  },
+  "login": {
+    "title": "Se connecter",
+    "github": "GitHub",
+    "google": "Google",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "E-mail",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Mot de passe",
+    "forgetPassword": "Mot de passe oublié ?",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire",
+    "agreePrefix": "en continuant, vous acceptez les Conditions d'utilisation et la Politique de confidentialité de TRAE",
+    "submit": "Se connecter"
+  },
+  "cookies": {
+    "title": "Avis sur les cookies",
+    "notice": "TRAE utilise des cookies et des technologies similaires pour fournir, sécuriser, analyser, améliorer et commercialiser nos services. En savoir plus dans notre Politique relative aux cookies.",
+    "accept": "Compris"
+  },
+  "workspace": {
+    "office": {
+      "heroTitle": "Plus Que Du Code",
+      "heroSubtitle": "Laissez SOLO gérer toutes vos tâches de bureau",
+      "heroDescription": "Vous aide à organiser des revues de littérature, créer des PPT, analyser des données Excel et d'autres tâches quotidiennes, en fournissant des livrables professionnels.",
+      "cards": {
+        "reading": {
+          "title": "Lecture Web",
+          "desc": "Lisez des articles en ligne pour produire des revues de littérature."
+        },
+        "research": {
+          "title": "Recherche et Analyse",
+          "desc": "Recherchez des plateformes vidéo et générez des présentations."
+        },
+        "mining": {
+          "title": "Exploration de Données",
+          "desc": "Extrayez des données du marché de l'IA et analysez les tendances."
+        },
+        "content": {
+          "title": "Création de contenu",
+          "desc": "Générez des posts promotionnels avec des supports."
+        }
+      }
+    },
+    "code": {
+      "heroTitle": "Codez avec SOLO",
+      "heroSubtitle": "Laissez SOLO gérer toutes vos tâches de développement",
+      "heroDescription": "Vous aide à écrire du code, déboguer, optimiser les performances et d'autres tâches de développement, en livrant du code prêt pour la production.",
+      "cards": {
+        "app-dev": {
+          "title": "Développement d'App",
+          "desc": "Implémentez une plateforme d'apprentissage multilingue."
+        },
+        "understanding": {
+          "title": "Compréhension de Projet",
+          "desc": "Analysez le dépôt du projet et générez un wiki de code."
+        },
+        "game": {
+          "title": "Créativité de Jeu",
+          "desc": "Créez un jeu de combat de mechas en pixel art."
+        },
+        "automation": {
+          "title": "Outils d'Automatisation",
+          "desc": "Écrivez un outil d'automatisation pour collecter des données."
+        }
+      }
+    }
+  }
+}

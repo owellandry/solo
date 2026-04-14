@@ -1,8 +1,12 @@
-import { contextBridge } from 'electron';
+const { contextBridge, ipcRenderer } = require('electron');
 
 // Expose protected methods that allow the renderer process to use
 // the ipcRenderer without exposing the entire object
 contextBridge.exposeInMainWorld('electron', {
-  // You can add methods here later, e.g.:
-  // getAppVersion: () => ipcRenderer.invoke('get-app-version')
+  // Methods for custom title bar controls
+  windowControls: {
+    minimize: () => ipcRenderer.send('window-minimize'),
+    maximize: () => ipcRenderer.send('window-maximize'),
+    close: () => ipcRenderer.send('window-close')
+  }
 });

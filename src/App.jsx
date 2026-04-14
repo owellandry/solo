@@ -1,6 +1,10 @@
 import './App.css';
 import { CookieNotice } from './presentation/components/common/CookieNotice';
 import { LoginModal } from './presentation/components/common/LoginModal';
+<<<<<<< HEAD
+=======
+import { ElectronTitlebar } from './presentation/components/common/ElectronTitlebar';
+>>>>>>> 5e697365b2410d01cf40fd795d168bb9c8e93055
 import { Sidebar } from './presentation/components/layout/Sidebar';
 import { HomeView } from './presentation/components/views/HomeView';
 import { SkillsView } from './presentation/components/views/SkillsView';
@@ -14,6 +18,10 @@ function App() {
 
   return (
     <>
+<<<<<<< HEAD
+=======
+      <ElectronTitlebar />
+>>>>>>> 5e697365b2410d01cf40fd795d168bb9c8e93055
       <div className={`app-shell ${state.loginOpen ? 'has-modal' : ''} ${state.isSidebarCollapsed ? 'is-sidebar-collapsed' : ''}`}>
         <Sidebar
           activeView={state.activeView}

@@ -7,6 +7,61 @@
   background-color: var(--bg);
   position: relative;
   z-index: 1;
+  /* Permitir arrastrar la ventana de Electron desde cualquier área vacía */
+  -webkit-app-region: drag;
+}
+
+/* Deshabilitar arrastre en elementos interactivos */
+button, input, textarea, a, select, .sidebar__scrollable, .conversation, .task-main, .sidebar__nav-item, .project-list__item, .mode-switch {
+  -webkit-app-region: no-drag;
+}
+
+.electron-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 32px;
+  background: var(--sidebar-bg);
+  -webkit-app-region: drag;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.electron-titlebar__controls {
+  display: flex;
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+
+.electron-titlebar__btn {
+  background: transparent;
+  border: none;
+  width: 46px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--heading);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.electron-titlebar__btn:hover {
+  background-color: rgba(121, 129, 146, 0.15);
+}
+
+.electron-titlebar__btn--close:hover {
+  background-color: #e81123;
+  color: white;
+}
+
+/* Ajustar el padding superior de la app para no superponerse con la titlebar */
+.app-shell {
+  padding-top: 32px;
 }
 
 .app-shell.has-modal .workspace,

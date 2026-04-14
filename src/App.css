@@ -7,14 +7,8 @@
   background-color: var(--bg);
   position: relative;
   z-index: 1;
-  /* Permitir arrastrar la ventana de Electron desde cualquier área vacía */
-  -webkit-app-region: drag;
 }
 
-/* Deshabilitar arrastre en elementos interactivos */
-button, input, textarea, a, select, .sidebar__scrollable, .conversation, .task-main, .sidebar__nav-item, .project-list__item, .mode-switch {
-  -webkit-app-region: no-drag;
-}
 
 .electron-titlebar {
   display: flex;
@@ -48,6 +42,7 @@ button, input, textarea, a, select, .sidebar__scrollable, .conversation, .task-m
   color: var(--heading);
   cursor: pointer;
   transition: background-color 0.2s;
+  -webkit-app-region: no-drag;
 }
 
 .electron-titlebar__btn:hover {
@@ -76,7 +71,7 @@ button, input, textarea, a, select, .sidebar__scrollable, .conversation, .task-m
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   position: relative;
   transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 10;

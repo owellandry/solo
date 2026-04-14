@@ -1,4 +1,5 @@
-import { HiOutlineArrowUp, HiOutlineHome, HiOutlinePaperClip } from 'react-icons/hi2';
+import { HiOutlineArrowUp, HiOutlinePaperClip } from 'react-icons/hi2';
+import { LuSquareSlash } from 'react-icons/lu';
 import { useTranslation } from 'react-i18next';
 
 export function TaskComposer() {
@@ -9,7 +10,7 @@ export function TaskComposer() {
       <div className="task-composer__footer">
         <div className="task-composer__left">
           <button className="composer-button" aria-label="Home">
-            <HiOutlineHome size={15} />
+            <LuSquareSlash size={15} />
           </button>
           <button className="composer-button" aria-label="Attach file">
             <HiOutlinePaperClip size={15} />
